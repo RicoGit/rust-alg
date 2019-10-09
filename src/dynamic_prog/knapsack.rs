@@ -60,17 +60,6 @@ impl Matrix {
     }
 }
 
-#[derive(Debug)]
-pub struct Knapsack {
-    pub items: Vec<Item>,
-}
-
-impl Knapsack {
-    fn new() -> Self {
-        Knapsack { items: vec![] }
-    }
-}
-
 pub fn solve(items: Vec<Item>, knapsack_capacity: usize) -> usize {
     let matrix = Matrix::new(items.len() + 1, knapsack_capacity);
 
@@ -79,7 +68,7 @@ pub fn solve(items: Vec<Item>, knapsack_capacity: usize) -> usize {
             // if this item can't be added, just return calculated value for prev item
             matrix.get(idx - 1, weight_left)
         } else {
-            // if this item could be added, choose between adding it and doing left the previous one
+            // if this item could be added, choose between adding it and leaving the previous one
             max(
                 matrix.get(idx - 1, weight_left),
                 item.value + matrix.get(idx - 1, weight_left - item.weight),
@@ -115,18 +104,6 @@ mod tests {
             Item::new(2, 1),
             Item::new(3, 5),
             Item::new(3, 3),
-        ];
-        let solution = solve(items, 5);
-        assert_eq!(solution, 7)
-    }
-
-    #[test]
-    fn solve_success_2() {
-        let items = vec![
-            Item::new(1, 2),
-            Item::new(1, 2),
-            Item::new(1, 3),
-            Item::new(4, 3),
         ];
         let solution = solve(items, 5);
         assert_eq!(solution, 7)
