@@ -8,9 +8,8 @@
 //!
 //! [hackerrank](https://www.hackerrank.com/challenges/sock-merchant/problem)
 
-use std::collections::{HashMap, HashSet};
+use std::collections::HashSet;
 use std::io;
-use std::io::Read;
 use std::str::FromStr;
 
 pub fn run() {
