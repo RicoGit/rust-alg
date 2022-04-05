@@ -37,6 +37,13 @@ mod longest_substring_witout_repeating;
 mod permutation_in_string;
 /// 1721. Swapping Nodes in a Linked List
 mod swapping_nodes_in_linked_list;
+/// 11. Container With Most Water
+mod container_sith_most_water;
+/// 733. Flood Fill
+mod flood_fill;
+/// 695. Max Area of Island
+mod max_area_of_island;
+
 
 
 
