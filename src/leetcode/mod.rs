@@ -43,6 +43,16 @@ mod container_sith_most_water;
 mod flood_fill;
 /// 695. Max Area of Island
 mod max_area_of_island;
+/// 923. 3Sum With Multiplicity
+mod sum_with_multiplicity;
+/// 617. Merge Two Binary Trees
+mod merge_two_binary_trees;
+/// 542. 01 Matrix
+mod matrix1;
+/// 994. Rotting Oranges
+mod rotting_oranges;
+/// 703. Kth Largest Element in a Stream
+mod kth_largest_element_in_stream;
 
 
 
