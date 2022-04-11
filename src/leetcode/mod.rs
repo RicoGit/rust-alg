@@ -53,6 +53,35 @@ mod matrix1;
 mod rotting_oranges;
 /// 703. Kth Largest Element in a Stream
 mod kth_largest_element_in_stream;
+/// 21. Merge Two Sorted Lists
+mod merge_two_sorted_lists;
+/// 206. Reverse Linked List
+mod reverse_linked_list;
+/// 77. Combinations
+mod combinations;
+mod combinations_pairs;
+/// 347. Top K Frequent Elements
+mod top_k_frequent_elements;
+/// 46. Permutations
+mod permutations;
+/// 784. Letter Case Permutation
+mod letter_case_permutation;
+/// 682. Baseball Game
+mod baseball_game;
+/// 70. Climbing Stairs
+mod climbing_stairs;
+/// 198. House Robber
+mod house_robber;
+/// 120. Triangle
+mod triangle;
+/// 231. Power of Two
+mod power_of_two;
+/// 191. Number of 1 Bits
+mod number_of_one_bit;
+
+
+
+
 
 
 
