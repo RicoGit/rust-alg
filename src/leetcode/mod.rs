@@ -20,7 +20,7 @@ mod two_sum2_input_array_sorted;
 /// 344. Reverse String
 mod reverse_string;
 /// 557. Reverse Words in a String III
-mod rever_words_in_str3;
+mod reverse_words_in_str3;
 /// 680. Valid Palindrome II
 mod valid_palindrome2;
 /// 125. Valid Palindrome
@@ -38,7 +38,7 @@ mod permutation_in_string;
 /// 1721. Swapping Nodes in a Linked List
 mod swapping_nodes_in_linked_list;
 /// 11. Container With Most Water
-mod container_sith_most_water;
+mod container_with_most_water;
 /// 733. Flood Fill
 mod flood_fill;
 /// 695. Max Area of Island
@@ -78,6 +78,21 @@ mod triangle;
 mod power_of_two;
 /// 191. Number of 1 Bits
 mod number_of_one_bit;
+/// 1260. Shift 2D Grid
+mod shift_2d_grid;
+/// 190. Reverse Bits
+mod reverse_bits;
+/// 136. Single Number
+mod single_number;
+/// 289. Game of Life
+mod game_of_life;
+/// 59. Spiral Matrix II
+mod spiral_matrix2;
+/// 217. Contains Duplicate
+mod contains_duplicate;
+/// 53. Maximum Subarray
+mod maximum_subarray;
+
 
 
 
