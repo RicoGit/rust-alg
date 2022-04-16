@@ -92,6 +92,26 @@ mod spiral_matrix2;
 mod contains_duplicate;
 /// 53. Maximum Subarray
 mod maximum_subarray;
+/// 700. Search in a Binary Search Tree
+mod search_in_binary_search_tree;
+/// 1. Two Sum
+mod two_sum;
+/// 88. Merge Sorted Array
+mod merge_two_sorted_array;
+/// 669. Trim a Binary Search Tree
+mod trim_binary_search_tree;
+/// 350. Intersection of Two Arrays II
+mod intersection_of_two_arrays2;
+/// 121. Best Time to Buy and Sell Stock
+mod best_time_to_buy_and_sell_stock;
+/// 538. Convert BST to Greater Tree
+mod convert_bst_to_greater_tree;
+/// 566. Reshape the Matrix
+mod reshape_the_matrix;
+/// 118. Pascal's Triangle
+mod pascals_triangle;
+
+
 
 
 
