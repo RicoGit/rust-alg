@@ -110,6 +110,20 @@ mod convert_bst_to_greater_tree;
 mod reshape_the_matrix;
 /// 118. Pascal's Triangle
 mod pascals_triangle;
+/// 897. Increasing Order Search Tree
+mod increase_order_search_tree;
+/// 36. Valid Sudoku
+mod valid_sudoku;
+/// 74. Search a 2D Matrix
+mod search_2d_matrix;
+/// 230. Kth Smallest Element in a BST
+mod kth_smallets_element_in_bst;
+/// 387. First Unique Character in a String
+mod first_unique_character_in_string;
+/// 383. Ransom Note
+mod ransome_note;
+/// 242. Valid Anagram
+mod valid_anagram;
 
 
 
