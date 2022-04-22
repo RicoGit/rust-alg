@@ -59,6 +59,7 @@ mod merge_two_sorted_lists;
 mod reverse_linked_list;
 /// 77. Combinations
 mod combinations;
+/// Combinations pairs
 mod combinations_pairs;
 /// 347. Top K Frequent Elements
 mod top_k_frequent_elements;
@@ -124,6 +125,31 @@ mod first_unique_character_in_string;
 mod ransome_note;
 /// 242. Valid Anagram
 mod valid_anagram;
+/// 99. Recover Binary Search Tree
+mod recover_binary_search_tree;
+/// 141. Linked List Cycle
+mod linked_list_cycle;
+/// 203. Remove Linked List Elements
+mod remove_linked_list_elements;
+/// 173. Binary Search Tree Iterator
+mod binary_search_tree_iterator;
+/// 83. Remove Duplicates from Sorted List
+mod remove_duplicates_from_sorted_list;
+/// 705. Design HashSet
+mod design_hashset;
+/// 20. Valid Parentheses
+mod valid_parentheses;
+/// 232. Implement Queue using Stacks
+mod implement_queue_using_stack;
+/// 706. Design HashMap
+mod design_hashmap;
+/// 144. Binary Tree Preorder Traversal
+mod binary_tree_preorder_traversal;
+/// 94. Binary Tree Inorder Traversal
+mod binary_tree_inorder_traversal;
+/// 145. Binary Tree Postorder Traversal
+mod binary_tree_postorder_traversal;
+
 
 
 
