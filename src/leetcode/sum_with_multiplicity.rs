@@ -27,9 +27,13 @@ impl Solution {
         for key1 in &keys {
             for key2 in &keys {
                 // println!("{}+{}", key1, key2);
-                if key1 > key2 { continue }
+                if key1 > key2 {
+                    continue;
+                }
                 let key3 = target - key1 - key2;
-                if key3 < *key2 { break }
+                if key3 < *key2 {
+                    break;
+                }
                 // println!("{}+{}+{}", key1, key2, key3);
                 match map.get(&key3) {
                     None => (),
@@ -51,7 +55,6 @@ impl Solution {
 
         result as i32
     }
-
 }
 
 struct Solution;
@@ -60,10 +63,9 @@ struct Solution;
 mod test {
     use crate::leetcode::sum_with_multiplicity::Solution;
 
-
     #[test]
     fn test1() {
-        let res = Solution::three_sum_multi(vec![1,1,2,2,2,2], 5);
+        let res = Solution::three_sum_multi(vec![1, 1, 2, 2, 2, 2], 5);
         assert_eq!(res, 12)
     }
 
@@ -314,7 +316,6 @@ mod test {
         );
         assert_eq!(res, 495500972)
     }
-
 }
 
 // pub fn three_sum_multi(arr: Vec<i32>, target: i32) -> i32 {
@@ -357,4 +358,3 @@ mod test {
 //         return 0
 //     }
 // }
-

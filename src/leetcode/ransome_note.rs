@@ -15,9 +15,9 @@ impl Solution {
                 None => return false,
                 Some(val) => {
                     if val == 0 {
-                        return false
+                        return false;
                     }
-                    map.insert(ch, val-1);
+                    map.insert(ch, val - 1);
                 }
             }
         }

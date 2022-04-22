@@ -74,5 +74,4 @@ mod test {
         let expected = ListNode::new_list(&vec![1, 4, 3, 2, 5]);
         assert_eq!(Solution::swap_nodes(input, 2), expected);
     }
-
 }

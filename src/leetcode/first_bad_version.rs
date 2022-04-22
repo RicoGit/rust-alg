@@ -3,8 +3,6 @@
 struct Solution();
 
 impl Solution {
-
-
     // The API isBadVersion is defined for you.
     // to call it use self.isBadVersion(version)
     fn isBadVersion(&self, _n: i32) -> bool {
@@ -14,7 +12,6 @@ impl Solution {
     pub fn first_bad_version(&self, n: i32) -> i32 {
         self.search_rec(0, n as usize)
     }
-
 
     fn search_rec(&self, start: usize, end: usize) -> i32 {
         if end == start {

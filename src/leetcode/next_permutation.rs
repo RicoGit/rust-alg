@@ -12,9 +12,10 @@ pub fn next_permutation_rec(nums: &mut [i32]) {
 
             let idx2 = (idx..nums.len())
                 .rev()
-                .find(|&i| before_last < nums[i]).unwrap();
+                .find(|&i| before_last < nums[i])
+                .unwrap();
 
-            swap(nums, idx-1, idx2);
+            swap(nums, idx - 1, idx2);
             changed_idx = Some(idx);
             break;
         }

@@ -22,7 +22,7 @@ impl Solution {
                 start += 1;
                 end -= 1;
             } else {
-                return false
+                return false;
             }
         }
         true
@@ -35,6 +35,9 @@ mod test {
 
     #[test]
     fn test1() {
-        assert_eq!(Solution::is_palindrome("A man, a plan, a canal: Panama".to_string()), true)
+        assert_eq!(
+            Solution::is_palindrome("A man, a plan, a canal: Panama".to_string()),
+            true
+        )
     }
 }

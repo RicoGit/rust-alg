@@ -1,7 +1,6 @@
 //! 289. Game of Life
 
 impl Solution {
-
     // live cell
     // 0 1  - dead
     // 2 3  - live
@@ -25,24 +24,27 @@ impl Solution {
                         board[row_idx][col_idx] = 1;
                     }
                 }
-
             }
         }
     }
 
     fn number_of_neighbors(row_idx: usize, col_idx: usize, board: &Vec<Vec<i32>>) -> usize {
-        Self::cell_value(row_idx-1, col_idx, board) +
-            Self::cell_value(row_idx-1, col_idx+1, board) +
-            Self::cell_value(row_idx-1, col_idx-1, board) +
-            Self::cell_value(row_idx+1, col_idx, board) +
-            Self::cell_value(row_idx+1, col_idx-1, board) +
-            Self::cell_value(row_idx+1, col_idx+1, board) +
-            Self::cell_value(row_idx, col_idx+1, board) +
-            Self::cell_value(row_idx, col_idx-1, board)
+        Self::cell_value(row_idx - 1, col_idx, board)
+            + Self::cell_value(row_idx - 1, col_idx + 1, board)
+            + Self::cell_value(row_idx - 1, col_idx - 1, board)
+            + Self::cell_value(row_idx + 1, col_idx, board)
+            + Self::cell_value(row_idx + 1, col_idx - 1, board)
+            + Self::cell_value(row_idx + 1, col_idx + 1, board)
+            + Self::cell_value(row_idx, col_idx + 1, board)
+            + Self::cell_value(row_idx, col_idx - 1, board)
     }
 
     fn cell_value(row_idx: usize, col_idx: usize, board: &Vec<Vec<i32>>) -> usize {
-        board.get(row_idx).and_then(|r| r.get(col_idx)).copied().unwrap_or(0) as usize
+        board
+            .get(row_idx)
+            .and_then(|r| r.get(col_idx))
+            .copied()
+            .unwrap_or(0) as usize
     }
 }
 

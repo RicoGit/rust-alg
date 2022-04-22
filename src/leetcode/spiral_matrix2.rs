@@ -1,12 +1,13 @@
 //! 59. Spiral Matrix II
 
-
 enum Direction {
-    Right, Left, Top, Bottom
+    Right,
+    Left,
+    Top,
+    Bottom,
 }
 
 impl Solution {
-
     // 1 2
     // 4 3
     // 1243
@@ -28,7 +29,9 @@ impl Solution {
         let mut direction = Direction::Right;
 
         loop {
-            if counter > size { break; }
+            if counter > size {
+                break;
+            }
 
             res[row][col] = counter;
             counter += 1;
@@ -37,31 +40,31 @@ impl Solution {
 
             match direction {
                 Direction::Right => {
-                    if !Self::has_next(row, col+1, &res) {
+                    if !Self::has_next(row, col + 1, &res) {
                         direction = Direction::Bottom;
                         row += 1;
                     } else {
                         col += 1;
                     }
-                },
+                }
                 Direction::Bottom => {
-                    if !Self::has_next(row+1, col, &res) {
+                    if !Self::has_next(row + 1, col, &res) {
                         direction = Direction::Left;
                         col -= 1;
                     } else {
                         row += 1;
                     }
-                },
+                }
                 Direction::Left => {
-                    if !Self::has_next(row, col-1, &res) {
+                    if !Self::has_next(row, col - 1, &res) {
                         direction = Direction::Top;
                         row -= 1;
                     } else {
                         col -= 1;
                     }
-                },
+                }
                 Direction::Top => {
-                    if !Self::has_next(row-1, col, &res) {
+                    if !Self::has_next(row - 1, col, &res) {
                         direction = Direction::Right;
                         col += 1;
                     } else {

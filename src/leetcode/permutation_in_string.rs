@@ -20,7 +20,6 @@ impl Solution {
 
         let mut start_idx = 1;
         loop {
-
             if window == s1_freq {
                 return true;
             }
@@ -37,12 +36,14 @@ impl Solution {
             match window.remove(&old_elem) {
                 None => (),
                 Some(1) => (),
-                Some(prev) => { window.insert(old_elem, prev - 1); }
+                Some(prev) => {
+                    window.insert(old_elem, prev - 1);
+                }
             };
             let new_elem = s2[end_idx];
             match window.remove(&new_elem) {
                 None => window.insert(new_elem, 1),
-                Some(prev) => window.insert(new_elem, prev + 1)
+                Some(prev) => window.insert(new_elem, prev + 1),
             };
 
             start_idx += 1;

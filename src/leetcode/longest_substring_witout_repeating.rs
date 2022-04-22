@@ -15,9 +15,9 @@ impl Solution {
             // todo optimize: use binary search for putting and retrieving from 'seen' vector
             match Solution::find_idx(&seen, &current) {
                 Some(idx) => {
-                    seen = Vec::from(&seen[idx+1..]);
+                    seen = Vec::from(&seen[idx + 1..]);
                 }
-                None => ()
+                None => (),
             }
 
             seen.push(current);
@@ -34,7 +34,9 @@ impl Solution {
     // linear search, binary search will be better here
     fn find_idx(arr: &[u8], el: &u8) -> Option<usize> {
         for (idx, elem) in arr.iter().enumerate() {
-            if elem == el { return Some(idx) }
+            if elem == el {
+                return Some(idx);
+            }
         }
         None
     }

@@ -46,4 +46,3 @@ impl Solution {
 }
 
 struct Solution;
-

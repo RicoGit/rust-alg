@@ -5,7 +5,8 @@ impl Solution {
         let mut chars: Vec<char> = s.chars().collect();
         let mut result = vec![];
         Self::backtrack(&mut vec![], &chars, &mut result);
-        result.into_iter()
+        result
+            .into_iter()
             .map(|chars| chars.into_iter().collect::<String>())
             .collect::<Vec<String>>()
     }

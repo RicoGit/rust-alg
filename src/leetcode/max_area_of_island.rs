@@ -20,24 +20,26 @@ impl Solution {
     fn area(grid: &mut [Vec<i32>], row: usize, col: usize) -> i32 {
         let current = grid[row][col];
 
-        if current != 1 { return 0 }
+        if current != 1 {
+            return 0;
+        }
         grid[row][col] = 2;
 
         let mut sum = 1;
         if row > 0 {
-            sum += Solution::area(grid, row-1, col);
+            sum += Solution::area(grid, row - 1, col);
         }
 
         if row < grid.len() - 1 {
-            sum += Solution::area(grid, row+1, col);
+            sum += Solution::area(grid, row + 1, col);
         }
 
         if col > 0 {
-            sum += Solution::area(grid, row, col-1);
+            sum += Solution::area(grid, row, col - 1);
         }
 
         if col < grid[row].len() - 1 {
-            sum += Solution::area(grid, row, col+1);
+            sum += Solution::area(grid, row, col + 1);
         }
 
         sum

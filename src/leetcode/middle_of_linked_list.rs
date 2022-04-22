@@ -28,7 +28,6 @@ impl ListNode {
 }
 
 impl Solution {
-
     // iterative version
     pub fn middle_node_iterative(head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
         let mut mid_node: Box<ListNode> = head.clone().unwrap();
@@ -40,9 +39,7 @@ impl Solution {
                 Some(next) => {
                     current_node = next.clone();
                 }
-                None => {
-                    return Some(mid_node)
-                },
+                None => return Some(mid_node),
             }
             if odd && mid_node.next.is_some() {
                 mid_node = mid_node.next.unwrap();
@@ -59,18 +56,21 @@ impl Solution {
     fn next_node(
         start: Option<Box<ListNode>>,
         mid_node: Option<Box<ListNode>>,
-        odd: bool
+        odd: bool,
     ) -> Option<Box<ListNode>> {
-
         match start {
-            None =>  return mid_node,
+            None => return mid_node,
             node @ Some(_) => {
                 let next_node = node.clone().and_then(|n| n.next);
                 let not_end = mid_node.as_ref().is_some();
                 Solution::next_node(
                     next_node,
-                    if odd && not_end { mid_node.and_then(|mid| mid.next) } else { mid_node },
-                    !odd
+                    if odd && not_end {
+                        mid_node.and_then(|mid| mid.next)
+                    } else {
+                        mid_node
+                    },
+                    !odd,
                 )
             }
         }
@@ -93,8 +93,8 @@ mod test {
 
     #[test]
     fn test2() {
-        let input = ListNode::new_list(&vec![1,2,3,4,5,6]);
-        let expected = ListNode::new_list(&vec![4,5,6]);
+        let input = ListNode::new_list(&vec![1, 2, 3, 4, 5, 6]);
+        let expected = ListNode::new_list(&vec![4, 5, 6]);
         let result = Solution::middle_node(input);
         assert_eq!(result, expected)
     }

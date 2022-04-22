@@ -27,13 +27,11 @@ use std::rc::Rc;
 type Node = Rc<RefCell<TreeNode>>;
 
 impl Solution {
-
     /// Good recursive solution
     pub fn merge_trees(
         root1: Option<Rc<RefCell<TreeNode>>>,
         root2: Option<Rc<RefCell<TreeNode>>>,
     ) -> Option<Rc<RefCell<TreeNode>>> {
-
         match (root1.is_none(), root2.is_none()) {
             (true, true) => return None,
             (true, false) => return root2,
@@ -45,8 +43,14 @@ impl Solution {
         let second: Rc<RefCell<TreeNode>> = root2.unwrap();
         let mut result;
         result = TreeNode::new(first.deref().borrow().val + second.deref().borrow().val);
-        result.left = Self::merge_trees(first.deref().borrow().left.clone(), second.deref().borrow().left.clone());
-        result.right = Self::merge_trees(first.deref().borrow().right.clone(), second.deref().borrow().right.clone());
+        result.left = Self::merge_trees(
+            first.deref().borrow().left.clone(),
+            second.deref().borrow().left.clone(),
+        );
+        result.right = Self::merge_trees(
+            first.deref().borrow().right.clone(),
+            second.deref().borrow().right.clone(),
+        );
 
         Some(Rc::new(RefCell::new(result)))
     }
@@ -58,7 +62,6 @@ impl Solution {
         root1: Option<Rc<RefCell<TreeNode>>>,
         root2: Option<Rc<RefCell<TreeNode>>>,
     ) -> Option<Rc<RefCell<TreeNode>>> {
-
         // let it = root1.as_ref().unwrap();
         let mut first: Vec<i32> = vec![root1.as_ref().unwrap().as_ref().borrow().val];
         Solution::array_rec(&root1.unwrap(), 1, &mut first);
@@ -102,7 +105,11 @@ impl Solution {
             Solution::array_rec(&root.deref().borrow().left.clone().unwrap(), depth + 1, arr)
         }
         if right_is_defined {
-            Solution::array_rec(&root.as_ref().borrow().right.clone().unwrap(), depth + 1, arr)
+            Solution::array_rec(
+                &root.as_ref().borrow().right.clone().unwrap(),
+                depth + 1,
+                arr,
+            )
         }
     }
 
@@ -117,13 +124,12 @@ impl Solution {
 
     fn from_array(arr: &[i32], depth: usize) -> Option<Node> {
         if let Some(num) = arr.first() {
-
             if *num == -1 {
-                return None
+                return None;
             }
 
             let mut node = TreeNode::new(*num);
-            if depth < arr.len() - 1{
+            if depth < arr.len() - 1 {
                 node.left = Solution::from_array(&arr[(1 * depth)..], depth + 1);
             }
             if 2 * depth < arr.len() - 1 {

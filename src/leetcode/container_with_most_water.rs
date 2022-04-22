@@ -2,10 +2,9 @@
 
 impl Solution {
     pub fn max_area(height: Vec<i32>) -> i32 {
-
         let mut max = usize::MIN;
         let mut start = 0;
-        let mut end = height.len()-1;
+        let mut end = height.len() - 1;
 
         loop {
             let current = Solution::square(&height, start, end);
@@ -19,7 +18,7 @@ impl Solution {
             }
 
             if start >= end {
-                break
+                break;
             }
         }
 

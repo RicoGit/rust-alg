@@ -76,7 +76,6 @@ impl Solution {
         let ptr: Option<*mut ListNode> = head.as_mut().map(|h| h.deref_mut() as *mut ListNode);
         get_nth_node_rec(&head, ptr, 0, n)
     }
-
 }
 
 struct Solution;
@@ -88,7 +87,7 @@ mod test {
     #[test]
     fn get_nth_node_test1() {
         let mut input = ListNode::new_list(&vec![1, 2, 3, 4, 5]);
-        let expected = ListNode::new_list(&vec![3,4,5]);
+        let expected = ListNode::new_list(&vec![3, 4, 5]);
         let result = Solution::get_nth_node(&mut input, 2);
         unsafe { assert_eq!(*(result.unwrap()), *expected.unwrap()) }
     }
@@ -110,10 +109,9 @@ mod test {
 
     #[test]
     fn remove_nth_from_end_test3() {
-        let input = ListNode::new_list(&vec![1,2]);
+        let input = ListNode::new_list(&vec![1, 2]);
         let expected = ListNode::new_list(&vec![2]);
         let result = Solution::remove_nth_from_end(input, 2);
         assert_eq!(result, expected)
     }
-
 }

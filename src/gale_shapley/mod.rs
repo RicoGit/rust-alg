@@ -32,7 +32,7 @@ fn find_pairs<'a>(
         }
 
         if pairs.len() == women.len() {
-            break
+            break;
         }
     }
 

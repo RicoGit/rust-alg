@@ -3,7 +3,6 @@
 struct Solution;
 
 impl Solution {
-
     fn is_valid_palindrome(chars: &[char]) -> bool {
         let mut start = 0;
         let mut end = chars.len() - 1;
@@ -11,18 +10,16 @@ impl Solution {
             // println!("{} == {}, {}-{}", chars[start], chars[end], start, end);
 
             if chars[start] == chars[end] {
-                start +=1;
+                start += 1;
                 end -= 1;
             } else {
-                return false
+                return false;
             }
         }
         true
-
     }
 
     pub fn valid_palindrome(s: String) -> bool {
-
         let chars: Vec<char> = s.chars().collect();
 
         let mut start = 0;
@@ -31,17 +28,15 @@ impl Solution {
             // println!("{} == {}, {}-{}", chars[start], chars[end], start, end);
 
             if chars[start] == chars[end] {
-                start +=1;
+                start += 1;
                 end -= 1;
             } else {
-                return
-                    Solution::is_valid_palindrome(&chars[start..=(end-1)]) ||
-                        Solution::is_valid_palindrome(&chars[start+1..=end])
+                return Solution::is_valid_palindrome(&chars[start..=(end - 1)])
+                    || Solution::is_valid_palindrome(&chars[start + 1..=end]);
             }
         }
 
         true
-
     }
 }
 

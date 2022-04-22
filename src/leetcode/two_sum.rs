@@ -14,10 +14,10 @@ impl Solution {
             match map.get(&rem) {
                 Some(idx2) => {
                     if idx1 != *idx2 {
-                        return vec![idx1 as i32, *idx2 as i32]
+                        return vec![idx1 as i32, *idx2 as i32];
                     }
-                },
-                None => ()
+                }
+                None => (),
             }
         }
 

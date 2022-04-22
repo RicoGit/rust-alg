@@ -3,7 +3,6 @@
 struct Solution();
 
 impl Solution {
-
     // Constrains:
     //
     // 1 <= nums.length <= 104
@@ -11,13 +10,13 @@ impl Solution {
     // All the integers in nums are unique.
     // nums is sorted in ascending order.
     pub fn search(nums: Vec<i32>, target: i32) -> i32 {
-        search_rec(&nums, 0, nums.len() -1, target)
+        search_rec(&nums, 0, nums.len() - 1, target)
     }
 }
 
 fn search_rec(nums: &[i32], start: usize, end: usize, target: i32) -> i32 {
     if end == start {
-        if nums[start] == target{
+        if nums[start] == target {
             return start as i32;
         } else {
             return -1;
@@ -47,9 +46,9 @@ mod test {
         assert_eq!(Solution::search(vec![5], -5), -1);
     }
 
-   #[test]
+    #[test]
     fn test3() {
-        assert_eq!(Solution::search(vec![-1,0,5], 0), 1);
+        assert_eq!(Solution::search(vec![-1, 0, 5], 0), 1);
     }
 
     #[test]

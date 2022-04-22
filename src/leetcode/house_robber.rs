@@ -10,13 +10,10 @@ impl Solution {
 
     fn helper(nums: &[i32], buf: &mut Vec<i32>) -> i32 {
         if nums.is_empty() {
-            return 0
+            return 0;
         }
 
         let cur = nums[0];
-
-
-
 
         0
     }

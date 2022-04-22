@@ -4,7 +4,6 @@ use std::collections::{HashMap, HashSet};
 use std::ops::Range;
 
 impl Solution {
-
     pub fn is_valid_sudoku(board: Vec<Vec<char>>) -> bool {
         Self::helper(&board)
     }
@@ -15,7 +14,7 @@ impl Solution {
             for col_idx in 0..board[row_idx].len() {
                 let cur = board[row_idx][col_idx];
                 if cur == '.' {
-                    continue
+                    continue;
                 }
                 match map.remove(&cur) {
                     None => {
@@ -24,10 +23,10 @@ impl Solution {
                         let mut colls = HashSet::new();
                         colls.insert(col_idx);
                         map.insert(cur, (rows, colls));
-                    },
+                    }
                     Some((mut rows, mut colls)) => {
                         if !rows.insert(row_idx) || !colls.insert(col_idx) {
-                            return false
+                            return false;
                         }
                         map.insert(cur, (rows, colls));
                     }
@@ -46,7 +45,7 @@ impl Solution {
                 let c_end = (c * step) + step;
 
                 if !Self::check_square(board, r_start..r_end, c_start..c_end) {
-                    return false
+                    return false;
                 }
             }
         }
@@ -59,17 +58,16 @@ impl Solution {
         for row in &mat[rows] {
             for el in &row[colls.clone()] {
                 if *el == '.' {
-                    continue
+                    continue;
                 }
 
                 if !set.insert(*el) {
-                    return false
+                    return false;
                 }
             }
         }
         true
     }
-
 }
 
 struct Solution;

@@ -1,6 +1,5 @@
 //! 682. Baseball Game
 
-
 use std::str::FromStr;
 
 impl Solution {
@@ -11,11 +10,11 @@ impl Solution {
         for op in ops {
             match op.as_str() {
                 "D" => {
-                    
+                    let last = res[res.len()-1].clone();
+                    res.push(last*2);
                 },
                 "C" => {
-
-
+                    res.remove(res.len()-1);
                 },
                 "+" => {
                     let prev = res[res.len()-2].clone();

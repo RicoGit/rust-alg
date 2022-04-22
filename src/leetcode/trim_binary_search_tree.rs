@@ -43,11 +43,11 @@ impl Solution {
                 let val = node.val;
 
                 if node.val < low {
-                    return Self::helper(&node.right, low, high)
+                    return Self::helper(&node.right, low, high);
                 }
 
                 if node.val > high {
-                    return Self::helper(&node.left, low, high)
+                    return Self::helper(&node.left, low, high);
                 }
 
                 let left = Self::helper(&node.left, low, high);

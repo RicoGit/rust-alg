@@ -7,7 +7,6 @@ impl Solution {
 
         // calculate squares of negative numbers
         for (idx, num) in nums.iter().enumerate() {
-
             // we reach positive numbers
             if *num >= 0 {
                 break;
@@ -24,12 +23,12 @@ impl Solution {
         // println!("{:?} {:?}", negative_num_squares, positive_num_squares);
 
         if negative_num_squares.len() == 0 {
-            return positive_num_squares
+            return positive_num_squares;
         }
 
         if positive_num_squares.len() == 0 {
             negative_num_squares.reverse();
-            return negative_num_squares
+            return negative_num_squares;
         }
 
         // join squares of negative and positive numbers
@@ -45,7 +44,7 @@ impl Solution {
                 if idx1 < 0 {
                     let rest = &positive_num_squares[idx2 as usize..positive_num_squares.len()];
                     result.extend_from_slice(rest);
-                    break
+                    break;
                 }
             } else {
                 result.push(positive_num_squares[idx2 as usize]);
@@ -57,7 +56,7 @@ impl Solution {
                     for el in rest.iter().rev() {
                         result.push(*el);
                     }
-                    break
+                    break;
                 }
             }
         }
@@ -67,7 +66,6 @@ impl Solution {
 }
 
 struct Solution;
-
 
 #[cfg(test)]
 mod test {
@@ -83,15 +81,12 @@ mod test {
 
     #[test]
     fn test2() {
-        assert_eq!(
-            Solution::sorted_squares(vec![0]),
-            vec![0]
-        );
+        assert_eq!(Solution::sorted_squares(vec![0]), vec![0]);
     }
     #[test]
     fn test3() {
         assert_eq!(
-            Solution::sorted_squares(vec![-5,-3,-2,-1]),
+            Solution::sorted_squares(vec![-5, -3, -2, -1]),
             vec![1, 4, 9, 25]
         );
     }
@@ -99,8 +94,8 @@ mod test {
     #[test]
     fn test4() {
         assert_eq!(
-            Solution::sorted_squares(vec![-10000,-9999,-7,-5,0,0,10000]),
-            vec![0,0,25,49,99980001,100000000,100000000]
+            Solution::sorted_squares(vec![-10000, -9999, -7, -5, 0, 0, 10000]),
+            vec![0, 0, 25, 49, 99980001, 100000000, 100000000]
         );
     }
 }

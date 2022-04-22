@@ -9,15 +9,13 @@ impl Solution {
 }
 
 fn search_rec(nums: &[i32], start: usize, end: usize, target: i32) -> i32 {
-
     if start == end {
         if target <= nums[start] {
-            return start as i32
+            return start as i32;
         } else {
-            return start as i32 + 1
+            return start as i32 + 1;
         }
     }
-
 
     let mid = (start / 2) + (end / 2);
 
@@ -26,7 +24,6 @@ fn search_rec(nums: &[i32], start: usize, end: usize, target: i32) -> i32 {
     } else {
         search_rec(nums, mid + 1, end, target)
     }
-
 }
 
 #[cfg(test)]
@@ -45,7 +42,7 @@ mod test {
 
     #[test]
     fn test3() {
-        assert_eq!(Solution::search_insert(vec![-1,0,5], 0), 1);
+        assert_eq!(Solution::search_insert(vec![-1, 0, 5], 0), 1);
     }
 
     #[test]

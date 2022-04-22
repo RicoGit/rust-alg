@@ -2,11 +2,10 @@
 
 impl Solution {
     pub fn merge(nums1: &mut Vec<i32>, m: i32, nums2: &mut Vec<i32>, n: i32) {
-
         let res = nums1;
         let m = m as usize;
         let n = n as usize;
-        let nums1  = res.clone();
+        let nums1 = res.clone();
         res.clear();
         let mut idx1 = 0;
         let mut idx2 = 0;

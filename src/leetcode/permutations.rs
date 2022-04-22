@@ -16,12 +16,10 @@ impl Solution {
                 solution.push(nums[idx]);
                 result.push(solution)
             }
-
         }
 
         result
     }
-
 }
 
 struct Solution;

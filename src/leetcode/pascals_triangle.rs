@@ -9,7 +9,7 @@ impl Solution {
         for idx in 1..n {
             res[idx].push(1); // push first '1' in the row
             for col in 1..idx {
-                let sum = res[idx-1][col-1] + res[idx-1][col];
+                let sum = res[idx - 1][col - 1] + res[idx - 1][col];
                 res[idx].push(sum);
             }
             res[idx].push(1); // push last '1' in the row

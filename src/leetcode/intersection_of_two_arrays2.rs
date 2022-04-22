@@ -11,8 +11,8 @@ impl Solution {
             match map.insert(num, 1) {
                 None => (),
                 Some(val) => {
-                    map.insert(num, val+1);
-                },
+                    map.insert(num, val + 1);
+                }
             }
         }
 
@@ -21,7 +21,7 @@ impl Solution {
                 None => (),
                 Some(freq) => {
                     if freq > 1 {
-                        map.insert(num.clone(), freq-1);
+                        map.insert(num.clone(), freq - 1);
                     }
                     result.push(num)
                 }

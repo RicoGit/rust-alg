@@ -4,10 +4,8 @@ use std::cell::UnsafeCell;
 use std::cmp::min;
 
 impl Solution {
-
     // not efficient, but work well, consumes extra space
     pub fn rotate_simple(nums: &mut Vec<i32>, k: i32) {
-
         let len = nums.len();
         let point = len - (k as usize % len);
 
