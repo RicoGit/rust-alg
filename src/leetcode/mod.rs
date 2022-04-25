@@ -149,6 +149,22 @@ mod binary_tree_preorder_traversal;
 mod binary_tree_inorder_traversal;
 /// 145. Binary Tree Postorder Traversal
 mod binary_tree_postorder_traversal;
+/// 102. Binary Tree Level Order Traversal
+mod binary_tree_level_order_traversal;
+/// 104. Maximum Depth of Binary Tree
+mod maximum_depth_of_binary_tree;
+/// 101. Symmetric Tree
+mod symmetric_tree;
+/// 535. Encode and Decode TinyURL
+mod encode_and_decode_tiny_url;
+/// 1396. Design Underground System
+mod design_underground_system;
+/// 226. Invert Binary Tree
+mod invert_binary_tree;
+/// 112. Path Sum
+mod path_sum;
+/// 284. Peeking Iterator
+mod peeking_iterator;
 
 
 
