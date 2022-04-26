@@ -165,6 +165,16 @@ mod invert_binary_tree;
 mod path_sum;
 /// 284. Peeking Iterator
 mod peeking_iterator;
+/// 701. Insert into a Binary Search Tree
+mod insert_into_binary_tree;
+/// 1584. Min Cost to Connect All Points
+mod min_cost_to_connect_all_points;
+/// 98. Validate Binary Search Tree
+mod validate_binary_search_tree;
+/// 653. Two Sum IV - Input is a BST
+mod two_sumIV_input_is_bst;
+/// 235. Lowest Common Ancestor of a Binary Search Tree
+mod lower_common_ancestor_of_bst;
 
 
 
