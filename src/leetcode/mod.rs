@@ -175,6 +175,28 @@ mod validate_binary_search_tree;
 mod two_sumIV_input_is_bst;
 /// 235. Lowest Common Ancestor of a Binary Search Tree
 mod lower_common_ancestor_of_bst;
+/// 1202. Smallest String With Swaps
+mod smallest_string_with_swaps;
+/// 1631. Path With Minimum Effort
+mod path_with_minimum_effort;
+/// 785. Is Graph Bipartite?
+mod is_graph_bipartite;
+/// 399. Evaluate Division
+mod evaluate_division;
+/// 844. Backspace String Compare
+mod backspace_string_compare;
+/// 204. Count Primes
+mod count_primes;
+/// 34. Find First and Last Position of Element in Sorted Array
+mod find_first_and_last_position_of_element_in_sorted_array;
+/// 33. Search in Rotated Sorted Array
+mod search_in_rotated_sorted_array;
+/// 905. Sort Array By Parity
+mod sort_array_by_parity;
+/// 153. Find Minimum in Rotated Sorted Array
+mod find_minimum_in_rotated_sorted_array;
+
+
 
 
 
