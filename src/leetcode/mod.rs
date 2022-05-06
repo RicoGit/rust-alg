@@ -195,6 +195,18 @@ mod search_in_rotated_sorted_array;
 mod sort_array_by_parity;
 /// 153. Find Minimum in Rotated Sorted Array
 mod find_minimum_in_rotated_sorted_array;
+/// 581. Shortest Unsorted Continuous Subarray
+mod shortest_unsorted_continuous_subarray;
+/// Max Number of K-Sum Pairs
+mod max_number_of_ksum_pairs;
+/// 225. Implement Stack using Queues
+mod implement_stack_using_queues;
+/// 82. Remove Duplicates from Sorted List II
+mod remove_duplicates_from_sorted_list_2;
+/// 1209. Remove All Adjacent Duplicates in String II
+mod remove_all_adjacent_duplicates_in_string_2;
+/// 15. 3Sum
+mod three_sum;
 
 
 
