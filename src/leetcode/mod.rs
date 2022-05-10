@@ -207,7 +207,26 @@ mod remove_duplicates_from_sorted_list_2;
 mod remove_all_adjacent_duplicates_in_string_2;
 /// 15. 3Sum
 mod three_sum;
-
+/// 456. 132 Pattern
+mod one_three_two_pattern;
+/// 986. Interval List Intersections
+mod interval_list_intersections;
+/// 438. Find All Anagrams in a String
+mod find_all_anagrams_in_string;
+/// 341. Flatten Nested List Iterator
+mod flatten_nested_list_iterator;
+/// 713. Subarray Product Less Than K
+mod subarray_product_less_than_k;
+/// 209. Minimum Size Subarray Sum
+mod minimum_size_subarray_sum;
+/// 17. Letter Combinations of a Phone Number
+mod letter_combinations_of_phone_number;
+/// 216. Combination Sum III
+mod combination_sum_3;
+/// 200. Number of Islands
+mod number_of_islands;
+/// 547. Number of Provinces
+mod number_of_provinces;
 
 
 
