@@ -227,6 +227,22 @@ mod combination_sum_3;
 mod number_of_islands;
 /// 547. Number of Provinces
 mod number_of_provinces;
+/// 117. Populating Next Right Pointers in Each Node II
+mod populating_next_right_pointers_in_each_node_2;
+/// 572. Subtree of Another Tree
+mod subtree_of_another_tree;
+/// 1091. Shortest Path in Binary Matrix
+mod shortest_path_in_binary_matrix;
+/// 130. Surrounded Regions
+mod surrounded_regions;
+/// 1641. Count Sorted Vowel Strings
+mod count_sorted_vowel_string;
+/// 797. All Paths From Source to Target
+mod all_paths_from_source_to_target;
+/// 47. Permutations II
+mod permutations2;
+/// 52. N-Queens II (HARD)
+mod n_queens_2;
 
 
 
