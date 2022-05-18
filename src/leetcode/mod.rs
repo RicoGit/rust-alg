@@ -243,6 +243,32 @@ mod all_paths_from_source_to_target;
 mod permutations2;
 /// 52. N-Queens II (HARD)
 mod n_queens_2;
+/// 743. Network Delay Time
+mod network_delay_time;
+/// 1302. Deepest Leaves Sum
+mod deepest_leaves_sum;
+/// 78. Subsets
+mod subsets;
+/// 90. Subsets II
+mod subset2;
+/// 39. Combination Sum
+mod combination_sum;
+/// 40. Combination Sum II
+mod combination_sum_2;
+/// 79. Word Search
+mod word_search;
+/// 22. Generate Parentheses
+mod generate_parantheses;
+/// 213. House Robber II
+mod house_robber_2;
+/// 55. Jump Game
+mod jump_game;
+/// 45. Jump Game II
+mod jump_game_2;
+/// 1192. Critical Connections in a Network (HARD)
+mod critical_connections_in_network;
+/// 62. Unique Paths
+mod unique_paths;
 
 
 

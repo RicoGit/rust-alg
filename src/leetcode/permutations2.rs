@@ -33,7 +33,7 @@ impl Solution {
     }
 
     // iterative
-    pub fn permute_unique_rec(nums: Vec<i32>) -> Vec<Vec<i32>> {
+    pub fn permute_unique_iter(nums: Vec<i32>) -> Vec<Vec<i32>> {
         let n = nums.len();
         if nums.is_empty() {
             return vec![vec![]];
