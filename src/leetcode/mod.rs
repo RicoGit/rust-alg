@@ -269,8 +269,28 @@ mod jump_game_2;
 mod critical_connections_in_network;
 /// 62. Unique Paths
 mod unique_paths;
-
-
+/// 329. Longest Increasing Path in a Matrix
+mod longest_increasing_path_in_matrix;
+/// 63. Unique Paths II
+mod unique_paths_2;
+/// 413. Arithmetic Slices
+mod arithmetic_slices;
+/// 91. Decode Ways
+mod decode_ways;
+/// 322. Coin Change
+mod coin_change;
+/// 139. Word Break
+mod word_break;
+/// 300. Longest Increasing Subsequence
+mod longest_increasing_subsequence;
+/// 673. Number of Longest Increasing Subsequence
+mod number_increasing_subsequence;
+/// 647. Palindromic Substrings
+mod palindromic_substrings;
+/// 622. Design Circular Queue
+mod design_circular_queue;
+/// 474. Ones and Zeroes
+mod ones_and_zeroes;
 
 
 
