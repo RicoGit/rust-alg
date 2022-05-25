@@ -289,8 +289,10 @@ mod number_increasing_subsequence;
 mod palindromic_substrings;
 /// 622. Design Circular Queue
 mod design_circular_queue;
-/// 474. Ones and Zeroes
+/// 474. Ones and Zeroes (HARD)
 mod ones_and_zeroes;
+/// 354. Russian Doll Envelopes (HARD)
+mod russian_doll_envelopes;
 
 
 
