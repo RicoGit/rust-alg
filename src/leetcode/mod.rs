@@ -293,6 +293,10 @@ mod design_circular_queue;
 mod ones_and_zeroes;
 /// 354. Russian Doll Envelopes (HARD)
 mod russian_doll_envelopes;
+/// 32. Longest Valid Parentheses
+mod longest_valid_parentheses;
+/// 201. Bitwise AND of Numbers Range
+mod bitwise_and_of_numver_range;
 
 
 
