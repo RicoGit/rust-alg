@@ -297,6 +297,14 @@ mod russian_doll_envelopes;
 mod longest_valid_parentheses;
 /// 201. Bitwise AND of Numbers Range
 mod bitwise_and_of_numver_range;
+/// 318. Maximum Product of Word Lengths
+mod maximum_product_of_word_lengths;
+/// 752. Open the Lock
+mod open_the_lock;
+/// 279. Perfect Squares
+mod perfect_squares;
+/// 384. Shuffle an Array
+mod shuffle_an_array;
 
 
 
