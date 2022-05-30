@@ -297,8 +297,6 @@ mod russian_doll_envelopes;
 mod longest_valid_parentheses;
 /// 201. Bitwise AND of Numbers Range
 mod bitwise_and_of_numver_range;
-/// 318. Maximum Product of Word Lengths
-mod maximum_product_of_word_lengths;
 /// 752. Open the Lock
 mod open_the_lock;
 /// 279. Perfect Squares
@@ -307,6 +305,12 @@ mod perfect_squares;
 mod shuffle_an_array;
 /// 29. Divide Two Integers
 mod divide_two_integers;
+/// 1342. Number of Steps to Reduce a Number to Zero
+mod number_of_steps_to_reduce_number_to_zero;
+/// 268. Missing Number
+mod missing_number;
+/// 318. Maximum Product of Word Lengths
+mod maximum_product_of_word_lengths;
 
 
 
