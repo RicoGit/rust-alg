@@ -305,6 +305,8 @@ mod open_the_lock;
 mod perfect_squares;
 /// 384. Shuffle an Array
 mod shuffle_an_array;
+/// 29. Divide Two Integers
+mod divide_two_integers;
 
 
 
