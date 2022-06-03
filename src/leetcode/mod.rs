@@ -311,10 +311,10 @@ mod divide_two_integers;
 mod number_of_steps_to_reduce_number_to_zero;
 /// 268. Missing Number
 mod missing_number;
-/// 318. Maximum Product of Word Lengths
-mod maximum_product_of_word_lengths;
 /// 1461. Check If a String Contains All Binary Codes of Size K
 mod check_if_strig_contains_all_binary_codes_of_size_k;
+/// 304. Range Sum Query 2D - Immutable
+mod range_sum_query_2d_immutable;
 
 
 
