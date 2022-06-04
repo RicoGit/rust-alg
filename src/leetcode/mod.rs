@@ -315,6 +315,8 @@ mod missing_number;
 mod check_if_strig_contains_all_binary_codes_of_size_k;
 /// 304. Range Sum Query 2D - Immutable
 mod range_sum_query_2d_immutable;
+/// 51. N-Queens (HARD)
+mod n_queens;
 
 
 
