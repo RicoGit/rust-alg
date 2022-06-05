@@ -317,7 +317,10 @@ mod check_if_strig_contains_all_binary_codes_of_size_k;
 mod range_sum_query_2d_immutable;
 /// 51. N-Queens (HARD)
 mod n_queens;
-
+/// 1143. Longest Common Subsequence
+mod longest_common_subsequence;
+/// 202. Happy Number
+mod happy_number;
 
 
 
