@@ -321,6 +321,13 @@ mod n_queens;
 mod longest_common_subsequence;
 /// 202. Happy Number
 mod happy_number;
+/// 1480. Running Sum of 1d Array
+mod running_sum_of_1d_array;
+/// 155. Min Stack
+mod min_stack;
+/// 583. Delete Operation for Two Strings
+mod delete_operation_for_two_strings;
+
 
 
 
