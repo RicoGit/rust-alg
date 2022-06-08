@@ -327,6 +327,10 @@ mod running_sum_of_1d_array;
 mod min_stack;
 /// 583. Delete Operation for Two Strings
 mod delete_operation_for_two_strings;
+/// 1332. Remove Palindromic Subsequences
+mod remove_palindromic_subsequence;
+/// 72. Edit Distance (HARD)
+mod edit_distance;
 
 
 
