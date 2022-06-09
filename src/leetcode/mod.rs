@@ -321,6 +321,8 @@ mod n_queens;
 mod longest_common_subsequence;
 /// 202. Happy Number
 mod happy_number;
+/// 160. Intersection of Two Linked Lists
+mod intersection_of_two_linked_list;
 /// 1480. Running Sum of 1d Array
 mod running_sum_of_1d_array;
 /// 155. Min Stack
@@ -331,7 +333,8 @@ mod delete_operation_for_two_strings;
 mod remove_palindromic_subsequence;
 /// 72. Edit Distance (HARD)
 mod edit_distance;
-
+/// 343. Integer Break
+mod integer_break;
 
 
 
