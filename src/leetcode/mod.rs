@@ -312,7 +312,7 @@ mod number_of_steps_to_reduce_number_to_zero;
 /// 268. Missing Number
 mod missing_number;
 /// 1461. Check If a String Contains All Binary Codes of Size K
-mod check_if_strig_contains_all_binary_codes_of_size_k;
+mod check_if_string_contains_all_binary_codes_of_size_k;
 /// 304. Range Sum Query 2D - Immutable
 mod range_sum_query_2d_immutable;
 /// 51. N-Queens (HARD)
@@ -335,6 +335,9 @@ mod remove_palindromic_subsequence;
 mod edit_distance;
 /// 343. Integer Break
 mod integer_break;
+/// 149. Max Points on a Line (HARD)
+mod max_pointer_line;
+
 
 
 
