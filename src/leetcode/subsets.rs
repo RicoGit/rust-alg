@@ -1,25 +1,19 @@
 //! 78. Subsets
 
+//! 78. Subsets
+
 impl Solution {
-    // []
-    // [] [1]
-    // [] [1] [2] [1,2]
-    // [] [1] [2] [1,2] [3] [1,3] [1,2,3]
     pub fn subsets(nums: Vec<i32>) -> Vec<Vec<i32>> {
         let mut result = vec![vec![]];
-
+        // 1 2 3
+        // [[]] [[],[1]] [[],[1],[2],[1,2], [[],[1],[2],[1,2],[3],[1,3],[2,3],[1,2,3]]
         for num in nums {
-            let mut new_subset = vec![];
-
-            for mut old_subset in &mut result {
-                let mut subset = old_subset.clone();
-                subset.push(num);
-                new_subset.push(subset)
+            for idx in 0..result.len() {
+                let mut ans = result[idx].clone();
+                ans.push(num);
+                result.push(ans);
             }
-
-            result.extend(new_subset)
         }
-
         result
     }
 }

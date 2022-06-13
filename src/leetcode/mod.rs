@@ -337,6 +337,10 @@ mod edit_distance;
 mod integer_break;
 /// 149. Max Points on a Line (HARD)
 mod max_pointer_line;
+/// 1658. Minimum Operations to Reduce X to Zero
+mod minimum_operations_to_reduce_x_to_zero;
+/// 1695. Maximum Erasure Value
+mod maximum_erasure_value;
 
 
 
