@@ -341,6 +341,12 @@ mod max_pointer_line;
 mod minimum_operations_to_reduce_x_to_zero;
 /// 1695. Maximum Erasure Value
 mod maximum_erasure_value;
+/// 739. Daily Temperatures
+mod daily_temperatures;
+/// 1048. Longest String Chain
+mod longest_string_chain;
+/// 150. Evaluate Reverse Polish Notation
+mod evaluate_reverse_polish_notation;
 
 
 
