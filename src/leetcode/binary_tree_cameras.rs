@@ -21,33 +21,57 @@ impl TreeNode {
 use std::rc::Rc;
 use std::cell::RefCell;
 
-#[derive(Clone)]
-enum Color {
-    Red, Black, White
-}
-
-impl Color {
-    fn next(self) -> Self {
-        match self {
-            Color::Red => { Color::Black }
-            Color::Black => { Color::White }
-            Color::White => { Color:: Red }
-        }
-
-    }
-}
-
 impl Solution {
 
-
     pub fn min_camera_cover(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
+
+        #[derive(Clone, PartialEq, Eq)]
+        enum Camera {  HasCamera, Covered, NeedCover }
+
+        fn solve(root: &Option<Rc<RefCell<TreeNode>>>, counter: &mut i32) -> Camera {
+            if root.is_none() { return Camera::Covered }
+
+            let node = root.as_ref().unwrap().borrow();
+
+            match (solve(&node.left, counter), solve(&node.right, counter)) {
+                (Camera::NeedCover, _) | (_, Camera::NeedCover) => {
+                    *counter += 1;
+                    return Camera::HasCamera
+                }
+                (Camera::HasCamera, _) | (_, Camera::HasCamera) => {
+                    return Camera::Covered
+                }
+                (Camera::Covered, _) | (_, Camera::Covered) => {
+                    return Camera::NeedCover
+                }
+            }
+        }
+
         let mut counter = 0;
-        // todo
-        counter
+        if solve(&root, &mut counter) == Camera::NeedCover {
+            counter + 1
+        } else {
+            counter
+        }
     }
 
     // wrong solution
     pub fn min_camera_cover_wrong(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
+
+        #[derive(Clone)]
+        enum Color { Red, Black, White }
+
+        impl Color {
+            fn next(self) -> Self {
+                match self {
+                    Color::Red => { Color::Black }
+                    Color::Black => { Color::White }
+                    Color::White => { Color:: Red }
+                }
+
+            }
+        }
+
         // prev == true if previous node was black, false - if was red
         fn dfs(root: &Option<Rc<RefCell<TreeNode>>>, red: &mut usize, black: &mut usize, white: &mut usize, prev: Color) {
 
