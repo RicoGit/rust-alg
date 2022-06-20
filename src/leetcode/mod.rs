@@ -349,6 +349,10 @@ mod longest_string_chain;
 mod evaluate_reverse_polish_notation;
 /// 968. Binary Tree Cameras (HARD)
 mod binary_tree_cameras;
+/// 745. Prefix and Suffix Search (HARD)
+mod prefix_and_suffix_search;
+/// 820. Short Encoding of Words
+mod short_encoding_of_words;
 
 
 
