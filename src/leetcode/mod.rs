@@ -353,6 +353,8 @@ mod binary_tree_cameras;
 mod prefix_and_suffix_search;
 /// 820. Short Encoding of Words
 mod short_encoding_of_words;
+/// 1642. Furthest Building You Can Reach
+mod furhest_building_you_can_reach;
 
 
 
