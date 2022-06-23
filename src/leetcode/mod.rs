@@ -354,7 +354,13 @@ mod prefix_and_suffix_search;
 /// 820. Short Encoding of Words
 mod short_encoding_of_words;
 /// 1642. Furthest Building You Can Reach
-mod furhest_building_you_can_reach;
+mod furthest_building_you_can_reach;
+/// 215. Kth Largest Element in an Array
+mod kth_largest_element_in_array;
+/// 9. Palindrome Number
+mod palindrome_number;
+/// 630. Course Schedule III (HARD)
+mod course_schedule_3;
 
 
 
