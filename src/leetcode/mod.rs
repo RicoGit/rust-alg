@@ -361,7 +361,16 @@ mod kth_largest_element_in_array;
 mod palindrome_number;
 /// 630. Course Schedule III (HARD)
 mod course_schedule_3;
-
+/// 13. Roman to Integer
+mod roman_to_integer;
+/// 14. Longest Common Prefix
+mod longest_common_prefix;
+/// 28. Implement strStr()
+mod implement_strStr;
+/// 27. Remove Element
+mod remove_element;
+/// 26. Remove Duplicates from Sorted Array
+mod remove_duplicates_from_sorted_array;
 
 
 
