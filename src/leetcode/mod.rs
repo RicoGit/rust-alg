@@ -371,6 +371,8 @@ mod implement_strStr;
 mod remove_element;
 /// 26. Remove Duplicates from Sorted Array
 mod remove_duplicates_from_sorted_array;
+/// 58. Length of Last Word
+mod length_of_last_word;
 
 
 
