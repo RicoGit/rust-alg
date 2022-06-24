@@ -373,6 +373,12 @@ mod remove_element;
 mod remove_duplicates_from_sorted_array;
 /// 58. Length of Last Word
 mod length_of_last_word;
+/// 1354. Construct Target Array With Multiple Sums (HARD)
+mod construct_target_array_with_multiple_sums;
+/// 66. Plus One
+mod plus_one;
+/// 67. Add Binary
+mod add_binary;
 
 
 
