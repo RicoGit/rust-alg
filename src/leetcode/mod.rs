@@ -379,6 +379,16 @@ mod construct_target_array_with_multiple_sums;
 mod plus_one;
 /// 67. Add Binary
 mod add_binary;
+/// 169. Majority Element
+mod majority_element;
+/// 665. Non-decreasing Array
+mod non_decreasing_array;
+/// 2299. Strong Password Checker II
+mod strong_password_checker;
+/// 2185. Counting Words With a Given Prefix
+mod counting_word_with_a_given_prefix;
+/// 2169. Count Operations to Obtain Zero
+mod count_operations_to_obtain_zero;
 
 
 
