@@ -389,6 +389,16 @@ mod strong_password_checker;
 mod counting_word_with_a_given_prefix;
 /// 2169. Count Operations to Obtain Zero
 mod count_operations_to_obtain_zero;
+/// 1678. Goal Parser Interpretation
+mod goal_parser_interpretation;
+/// 263. Ugly Number
+mod ugly_number;
+/// 494. Target Sum
+mod target_sum;
+/// 394. Decode String
+mod decode_string;
+/// 1423. Maximum Points You Can Obtain from Cards
+mod maximum_points_you_can_obtain_from_cards;
 
 
 
