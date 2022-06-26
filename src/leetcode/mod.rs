@@ -399,6 +399,12 @@ mod target_sum;
 mod decode_string;
 /// 1423. Maximum Points You Can Obtain from Cards
 mod maximum_points_you_can_obtain_from_cards;
+/// 1603. Design Parking System
+mod design_parking_system;
+/// 841. Keys and Rooms
+mod keys_and_rooms;
+/// 10. Regular Expression Matching (HARD)
+mod regular_expression_matching;
 
 
 
