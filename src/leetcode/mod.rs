@@ -405,7 +405,12 @@ mod design_parking_system;
 mod keys_and_rooms;
 /// 10. Regular Expression Matching (HARD)
 mod regular_expression_matching;
-
+/// 1689. Partitioning Into Minimum Number Of Deci-Binary Numbers
+mod partitioning_into_minimum_number_of_deci_binary_numbers;
+/// 2. Add Two Numbers
+mod add_two_numbers;
+/// 1647. Minimum Deletions to Make Character Frequencies Unique
+mod minimum_deletions_to_make_character_frequencies_unique;
 
 
 
