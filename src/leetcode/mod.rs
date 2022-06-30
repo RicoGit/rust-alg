@@ -413,6 +413,12 @@ mod add_two_numbers;
 mod minimum_deletions_to_make_character_frequencies_unique;
 /// 462. Minimum Moves to Equal Array Elements II
 mod minimum_moves_to_equal_array_elements_2;
+/// 4. Median of Two Sorted Arrays (HARD)
+mod median_of_two_sorted_arrays;
+/// 292. Nim Game
+mod nim_game;
+/// 406. Queue Reconstruction by Height;
+mod queue_reconstruction_by_heaght;
 
 
 
