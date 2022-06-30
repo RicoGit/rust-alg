@@ -418,7 +418,15 @@ mod median_of_two_sorted_arrays;
 /// 292. Nim Game
 mod nim_game;
 /// 406. Queue Reconstruction by Height;
-mod queue_reconstruction_by_heaght;
+mod queue_reconstruction_by_height;
+/// 1523. Count Odd Numbers in an Interval Range
+mod count_odd_numbers_in_an_interval_range;
+/// 1491. Average Salary Excluding the Minimum and Maximum Salary
+mod average_salary_excluding_the_minimum_and_maxinun_salary;
+/// 724. Find Pivot Index
+mod find_pivot_index;
+/// 205. Isomorphic Strings
+mod isomorphic_strings;
 
 
 
