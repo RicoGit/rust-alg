@@ -411,6 +411,8 @@ mod partitioning_into_minimum_number_of_deci_binary_numbers;
 mod add_two_numbers;
 /// 1647. Minimum Deletions to Make Character Frequencies Unique
 mod minimum_deletions_to_make_character_frequencies_unique;
+/// 462. Minimum Moves to Equal Array Elements II
+mod minimum_moves_to_equal_array_elements_2;
 
 
 
