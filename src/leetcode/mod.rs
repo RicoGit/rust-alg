@@ -427,6 +427,28 @@ mod average_salary_excluding_the_minimum_and_maxinun_salary;
 mod find_pivot_index;
 /// 205. Isomorphic Strings
 mod isomorphic_strings;
+/// 1710. Maximum Units on a Truck
+mod maximum_units_on_truck;
+/// 1281. Subtract the Product and Sum of Digits of an Integer
+mod subtract_the_product_and_sum_of_digits_of_integer;
+/// 392. Is Subsequence
+mod is_subsequence;
+/// 1465. Maximum Area of a Piece of Cake After Horizontal and Vertical Cuts
+mod maximum_area_of_piece_of_cake;
+/// 976. Largest Perimeter Triangle
+mod largest_perimeter_triangle;
+/// 1779. Find Nearest Point That Has the Same X or Y Coordinate
+mod find_nearest_point_that_has_same_x_y_coords;
+/// 376. Wiggle Subsequence
+mod wiggle_subsequence;
+/// 1822. Sign of the Product of an Array
+mod sign_of_product_of_array;
+/// 1502. Can Make Arithmetic Progression From Sequence
+mod can_make_arithmetic_progression_from_sequence;
+/// 1790. Check if One String Swap Can Make Strings Equal
+mod check_if_one_string_swap_can_make_strings_equal;
+/// 142. Linked List Cycle II
+mod linked_list_cycle_2;
 
 
 
