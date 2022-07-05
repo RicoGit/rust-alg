@@ -449,7 +449,18 @@ mod can_make_arithmetic_progression_from_sequence;
 mod check_if_one_string_swap_can_make_strings_equal;
 /// 142. Linked List Cycle II
 mod linked_list_cycle_2;
-
+/// 135. Candy (HARD)
+mod candy;
+/// 409. Longest Palindrome
+mod longest_palindrome;
+/// 496. Next Greater Element I
+mod next_greater_element;
+/// 1232. Check If It Is a Straight Line
+mod check_if_it_is_straight_line;
+/// 128. Longest Consecutive Sequence
+mod longest_consecutive_sequence;
+/// 1588. Sum of All Odd Length Subarrays
+mod sum_of_all_odd_lenght_subarrays;
 
 
 
