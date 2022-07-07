@@ -460,8 +460,15 @@ mod check_if_it_is_straight_line;
 /// 128. Longest Consecutive Sequence
 mod longest_consecutive_sequence;
 /// 1588. Sum of All Odd Length Subarrays
-mod sum_of_all_odd_lenght_subarrays;
-
+mod sum_of_all_odd_length_subarrays;
+/// 509. Fibonacci Number
+mod fibonacci_number;
+/// 1672. Richest Customer Wealth
+mod richest_customer_wealth;
+/// 1572. Matrix Diagonal Sum
+mod matrix_diagonal_sum;
+/// 97. Interleaving String
+mod interleaving_string;
 
 
 
