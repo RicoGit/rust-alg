@@ -469,6 +469,8 @@ mod richest_customer_wealth;
 mod matrix_diagonal_sum;
 /// 97. Interleaving String
 mod interleaving_string;
+/// 1473. Paint House III (HARD)
+mod paint_house_3;
 
 
 
