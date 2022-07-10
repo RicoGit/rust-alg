@@ -471,6 +471,24 @@ mod matrix_diagonal_sum;
 mod interleaving_string;
 /// 1473. Paint House III (HARD)
 mod paint_house_3;
+/// 746. Min Cost Climbing Stairs
+mod min_cost_climbing_stairs;
+/// 1696. Jump Game VI
+mod jump_game_4;
+/// 1768. Merge Strings Alternately
+mod merge_strings_alternately;
+/// 389. Find the Difference
+mod find_the_difference;
+/// 709. To Lower Case
+mod to_lower_case;
+/// 1309. Decrypt String from Alphabet to Integer Mapping
+mod decrypt_string_from_alphabet_to_integer_mapping;
+/// 953. Verifying an Alien Dictionary
+mod verifying_alien_dictionary;
+/// 1290. Convert Binary Number in a Linked List to Integer
+mod convert_binary_number_in_linked_list_to_integer;
+/// 404. Sum of Left Leaves
+mod sum_of_left_leaves;
 
 
 
