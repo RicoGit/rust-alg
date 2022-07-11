@@ -489,7 +489,14 @@ mod verifying_alien_dictionary;
 mod convert_binary_number_in_linked_list_to_integer;
 /// 404. Sum of Left Leaves
 mod sum_of_left_leaves;
-
+/// 1356. Sort Integers by The Number of 1 Bits
+mod sort_integers_by_the_number_of_1_bits;
+/// 303. Range Sum Query - Immutable
+mod range_sum_query_immutable;
+/// 199. Binary Tree Right Side View
+mod binary_tree_right_side_view;
+/// 424. Longest Repeating Character Replacement
+mod longest_repeating_character_replacement;
 
 
 
