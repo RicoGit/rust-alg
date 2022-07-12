@@ -497,6 +497,10 @@ mod range_sum_query_immutable;
 mod binary_tree_right_side_view;
 /// 424. Longest Repeating Character Replacement
 mod longest_repeating_character_replacement;
+/// 299. Bulls and Cows
+mod bulls_and_cows;
+/// 473. Matchsticks to Square
+mod matchsticks_to_square;
 
 
 
