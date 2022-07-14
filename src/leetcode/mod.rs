@@ -501,7 +501,10 @@ mod longest_repeating_character_replacement;
 mod bulls_and_cows;
 /// 473. Matchsticks to Square
 mod matchsticks_to_square;
-
+/// 1046. Last Stone Weight
+mod last_stone_weight;
+/// 692. Top K Frequent Words
+mod top_k_frequent_words;
 
 
 
