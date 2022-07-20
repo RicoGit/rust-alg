@@ -4,7 +4,8 @@ use std::cmp::{Ordering, Reverse};
 
 impl Solution {
     pub fn max_envelopes(mut envelops: Vec<Vec<i32>>) -> i32 {
-        let mut env = envelops.into_iter()
+        let mut env = envelops
+            .into_iter()
             .map(|vec| (vec[0], Reverse(vec[1])))
             .collect::<Vec<_>>();
         env.sort_unstable();
@@ -23,7 +24,6 @@ impl Solution {
         dp.len() as i32
     }
 
-
     // brute force [Time Limit Exceeded]
     pub fn max_envelopes_(mut env: Vec<Vec<i32>>) -> i32 {
         env.sort_by_key(|vec| vec[0]);
@@ -39,7 +39,7 @@ impl Solution {
                 let next_h = env[next_idx][1];
 
                 if next_h < h {
-                    continue // there is no suitable values in sorted array
+                    continue; // there is no suitable values in sorted array
                 }
 
                 if next_w > w && next_h > h {

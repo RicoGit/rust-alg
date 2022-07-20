@@ -11,7 +11,11 @@ impl Solution {
         }
 
         if result.len() < total_len {
-            let (large, small) = if word1.len() < word2.len() { (word2, word1) } else { (word1, word2) };
+            let (large, small) = if word1.len() < word2.len() {
+                (word2, word1)
+            } else {
+                (word1, word2)
+            };
             result.extend(large.chars().skip(small.len()))
         }
 

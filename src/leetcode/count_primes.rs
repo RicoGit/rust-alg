@@ -5,11 +5,11 @@ impl Solution {
         let n = n as usize;
         let mut numbers = vec![true; n + 1];
         let mut counter = 0;
-        
-        for num in 2..n as usize{
+
+        for num in 2..n as usize {
             if numbers[num] {
-                for idx in 1..=(n/num) {
-                    numbers[idx*num] = false;
+                for idx in 1..=(n / num) {
+                    numbers[idx * num] = false;
                 }
                 counter += 1;
             }
@@ -20,24 +20,22 @@ impl Solution {
 
     pub fn count_primes_slow(n: i32) -> i32 {
         if n <= 2 {
-            return 0
+            return 0;
         }
 
         let mut primes = vec![];
 
         for num in (3..n as usize).step_by(2) {
-
             let mut need_add = true;
             for prime in &primes {
                 if num * num % prime == 0 {
                     need_add = false;
                     break;
                 }
-            };
+            }
             if need_add {
                 primes.push(num);
             }
-
         }
 
         primes.len() as i32 + 1
@@ -45,7 +43,6 @@ impl Solution {
 }
 
 struct Solution;
-
 
 #[cfg(test)]
 mod tests {
@@ -73,6 +70,4 @@ mod tests {
         let res = Solution::count_primes(499979);
         assert_eq!(res, 41537)
     }
-
-
 }

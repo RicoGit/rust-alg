@@ -3,23 +3,23 @@
 // Definition for a binary tree node.
 #[derive(Debug, PartialEq, Eq)]
 pub struct TreeNode {
-  pub val: i32,
-  pub left: Option<Rc<RefCell<TreeNode>>>,
-  pub right: Option<Rc<RefCell<TreeNode>>>,
+    pub val: i32,
+    pub left: Option<Rc<RefCell<TreeNode>>>,
+    pub right: Option<Rc<RefCell<TreeNode>>>,
 }
 
 impl TreeNode {
-  #[inline]
-  pub fn new(val: i32) -> Self {
-    TreeNode {
-      val,
-      left: None,
-      right: None
+    #[inline]
+    pub fn new(val: i32) -> Self {
+        TreeNode {
+            val,
+            left: None,
+            right: None,
+        }
     }
-  }
 }
-use std::rc::Rc;
 use std::cell::RefCell;
+use std::rc::Rc;
 
 type Node = Option<Rc<RefCell<TreeNode>>>;
 
@@ -40,7 +40,9 @@ impl Solution {
             (Some(left_cell), Some(right_cell)) => {
                 let left = left_cell.borrow();
                 let right = right_cell.borrow();
-                left.val == right.val && Self::check(&left.left, &right.right) && Self::check(&left.right, &right.left)
+                left.val == right.val
+                    && Self::check(&left.left, &right.right)
+                    && Self::check(&left.right, &right.left)
             }
         }
     }

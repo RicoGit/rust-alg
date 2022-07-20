@@ -8,15 +8,16 @@ impl Solution {
 
         heap.push((score, n - 1));
         for index in (0..(n - 1)).rev() {
-            let mut score = nums[index] + loop {
-                if let Some(&(val, idx)) = heap.peek() {
-                    if idx < index + k {
-                        heap.pop();
-                        continue
+            let mut score = nums[index]
+                + loop {
+                    if let Some(&(val, idx)) = heap.peek() {
+                        if idx < index + k {
+                            heap.pop();
+                            continue;
+                        }
+                        break val;
                     }
-                    break val;
-                }
-            };
+                };
             heap.push((score, index));
         }
         score

@@ -3,28 +3,27 @@
 // Definition for a binary tree node.
 #[derive(Debug, PartialEq, Eq)]
 pub struct TreeNode {
-  pub val: i32,
-  pub left: Option<Rc<RefCell<TreeNode>>>,
-  pub right: Option<Rc<RefCell<TreeNode>>>,
+    pub val: i32,
+    pub left: Option<Rc<RefCell<TreeNode>>>,
+    pub right: Option<Rc<RefCell<TreeNode>>>,
 }
 
 impl TreeNode {
-  #[inline]
-  pub fn new(val: i32) -> Self {
-    TreeNode {
-      val,
-      left: None,
-      right: None
+    #[inline]
+    pub fn new(val: i32) -> Self {
+        TreeNode {
+            val,
+            left: None,
+            right: None,
+        }
     }
-  }
 }
-use std::rc::Rc;
 use std::cell::RefCell;
+use std::rc::Rc;
 
 type Node = Option<Rc<RefCell<TreeNode>>>;
 
 impl Solution {
-
     pub fn invert_tree(root: Option<Rc<RefCell<TreeNode>>>) -> Option<Rc<RefCell<TreeNode>>> {
         Self::helper(&root);
         root
@@ -39,7 +38,7 @@ impl Solution {
             unsafe {
                 // deceive borrow checker
                 let right_prt: *mut Node = &mut node.right;
-                std::mem::swap(&mut node.left, &mut (*right_prt) );
+                std::mem::swap(&mut node.left, &mut (*right_prt));
             }
 
             // let tmp = node.right.take();

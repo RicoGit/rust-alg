@@ -4,27 +4,27 @@ use std::collections::{HashSet, VecDeque};
 
 impl Solution {
     pub fn open_lock(deadends: Vec<String>, target: String) -> i32 {
-
-        let mut visited = deadends.into_iter().map(|string| string.parse::<usize>().unwrap()).collect::<HashSet<_>>();
+        let mut visited = deadends
+            .into_iter()
+            .map(|string| string.parse::<usize>().unwrap())
+            .collect::<HashSet<_>>();
         let target = target.parse::<usize>().unwrap();
         let mut moves = 0;
         let mut queue = VecDeque::new();
         queue.push_back(0000);
         let cases = [1000, 0100, 0010, 0001];
         while !queue.is_empty() {
-
             for _ in 0..queue.len() {
                 let lock = queue.pop_front().unwrap();
 
                 if lock == target {
-                    return moves
+                    return moves;
                 } else if visited.insert(lock) {
                     for case in &cases {
                         queue.push_back(Self::next(lock, *case, true)); // +
                         queue.push_back(Self::next(lock, *case, false)); // -
                     }
                 }
-
             }
             moves += 1;
         }

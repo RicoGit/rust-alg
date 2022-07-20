@@ -1,15 +1,12 @@
 //! 155. Min Stack
 
 struct MinStack {
-    vec: Vec<i32>
+    vec: Vec<i32>,
 }
 
 impl MinStack {
-
     fn new() -> Self {
-        MinStack {
-            vec: vec![]
-        }
+        MinStack { vec: vec![] }
     }
 
     fn push(&mut self, val: i32) {

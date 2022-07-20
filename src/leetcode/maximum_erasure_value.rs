@@ -5,18 +5,18 @@ use std::collections::HashMap;
 impl Solution {
     pub fn maximum_unique_subarray(nums: Vec<i32>) -> i32 {
         let mut map = HashMap::new();
-        let mut acc = vec![0; nums.len()+1];
+        let mut acc = vec![0; nums.len() + 1];
         let mut start_idx = 0;
         let mut result = i32::MIN;
 
         for cur_idx in 0..nums.len() {
             let cur = nums[cur_idx];
-            acc[cur_idx+1] = acc[cur_idx] + cur;
-            let mut delta = acc[cur_idx+1];
+            acc[cur_idx + 1] = acc[cur_idx] + cur;
+            let mut delta = acc[cur_idx + 1];
             if let Some(prev_idx) = map.remove(&cur) {
                 if start_idx <= prev_idx {
                     start_idx = prev_idx + 1;
-                    delta -= acc[prev_idx+1];
+                    delta -= acc[prev_idx + 1];
                 } else {
                     delta -= acc[start_idx];
                 }
@@ -76,7 +76,6 @@ mod test {
             84, 657, 320, 982, 564, 424, 742, 447, 284, 658, 589, 930, 765, 467, 260, 552, 171,
             903, 869,
         ]);
-        assert_eq!(res, 40402
-        )
+        assert_eq!(res, 40402)
     }
 }

@@ -13,14 +13,14 @@ impl Solution {
             skip_removed(&mut t_idx, &t_arr);
 
             if s_idx.is_none() && t_idx.is_none() {
-                return true
+                return true;
             } else if s_idx.is_none() || t_idx.is_none() {
-                return false
+                return false;
             }
 
             if s_arr[s_idx.unwrap()] != t_arr[t_idx.unwrap()] {
                 // println!("{} != {}", s_arr[s_idx.unwrap()] as char, t_arr[t_idx.unwrap()] as char);
-                return false
+                return false;
             }
 
             dec(&mut s_idx);
@@ -32,18 +32,18 @@ impl Solution {
 fn skip_removed(idx: &mut Option<usize>, arr: &[u8]) {
     let mut skip = 0;
     if idx.is_none() || arr[idx.unwrap()] != b'#' {
-        return
+        return;
     }
 
     while idx.is_some() {
         if arr[idx.unwrap()] == b'#' {
-            skip +=1;
+            skip += 1;
             dec(idx);
-        } else if skip > 0{
+        } else if skip > 0 {
             skip -= 1;
             dec(idx)
         } else {
-            break
+            break;
         }
     }
 }
@@ -51,6 +51,5 @@ fn skip_removed(idx: &mut Option<usize>, arr: &[u8]) {
 fn dec(idx: &mut Option<usize>) {
     *idx = idx.and_then(|i| i.checked_sub(1));
 }
-
 
 struct Solution;

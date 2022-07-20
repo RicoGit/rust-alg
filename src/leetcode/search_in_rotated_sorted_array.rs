@@ -4,10 +4,10 @@ impl Solution {
     pub fn search(nums: Vec<i32>, target: i32) -> i32 {
         let size = nums.len();
 
-        let pivot = if nums[0] < nums[size-1] {
+        let pivot = if nums[0] < nums[size - 1] {
             0
         } else {
-            Self::find_pivot(&nums, 0, size-1)
+            Self::find_pivot(&nums, 0, size - 1)
         };
         println!("pivot {:?}", pivot);
 
@@ -16,7 +16,7 @@ impl Solution {
         }
 
         if let Ok(idx) = (&nums[pivot..]).binary_search(&target) {
-            return (idx+pivot) as i32;
+            return (idx + pivot) as i32;
         }
 
         -1
@@ -24,9 +24,9 @@ impl Solution {
 
     fn find_pivot(nums: &Vec<i32>, start: usize, end: usize) -> usize {
         if start == end {
-            return start + 1
+            return start + 1;
         }
-        let mid = (start+end)/2;
+        let mid = (start + end) / 2;
         println!("{} {} {}", start, mid, end);
         if nums[start] < nums[mid] {
             Self::find_pivot(nums, mid, end)
@@ -34,11 +34,9 @@ impl Solution {
             Self::find_pivot(nums, start, mid)
         }
     }
-
 }
 
 struct Solution;
-
 
 #[cfg(test)]
 mod tests {
@@ -62,14 +60,13 @@ mod tests {
     }
     #[test]
     fn test4() {
-        let res = Solution::search(vec![4,5,6,7,0,1,2], 0);
+        let res = Solution::search(vec![4, 5, 6, 7, 0, 1, 2], 0);
         assert_eq!(res, 4)
     }
     #[test]
-    fn test5() {                      //0 1 2 3 4 5 6 7
-        let res = Solution::search(vec![2,3,4,5,6,7,8,1], 8);
+    fn test5() {
+        //0 1 2 3 4 5 6 7
+        let res = Solution::search(vec![2, 3, 4, 5, 6, 7, 8, 1], 8);
         assert_eq!(res, 6)
     }
-
-
 }

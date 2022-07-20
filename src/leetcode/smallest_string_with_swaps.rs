@@ -2,15 +2,11 @@
 
 //! 1202. Smallest String With Swaps
 
-
-use std::collections::{HashSet, HashMap};
+use std::collections::{HashMap, HashSet};
 use std::str::Bytes;
 
-
 impl Solution {
-
     pub fn smallest_string_with_swaps(mut s: String, mut pairs: Vec<Vec<i32>>) -> String {
-
         let mut graph = vec![vec![]; s.len()];
         for pair in pairs {
             let from = pair[0] as usize;
@@ -22,7 +18,9 @@ impl Solution {
         let mut visited = vec![false; s.len()];
 
         for idx in 0..s.len() {
-            if  visited[idx] { continue };
+            if visited[idx] {
+                continue;
+            };
 
             let mut indexes = vec![];
             Self::subtree(idx, &graph, &mut visited, &mut indexes);
@@ -46,7 +44,12 @@ impl Solution {
         String::from_utf8_lossy(&bytes).to_string()
     }
 
-    fn subtree(idx: usize, graph: &Vec<Vec<usize>>, visited: &mut Vec<bool>, indexes: &mut Vec<usize>) {
+    fn subtree(
+        idx: usize,
+        graph: &Vec<Vec<usize>>,
+        visited: &mut Vec<bool>,
+        indexes: &mut Vec<usize>,
+    ) {
         visited[idx] = true;
         indexes.push(idx);
         if let Some(children) = graph.get(idx) {
@@ -59,6 +62,4 @@ impl Solution {
     }
 }
 
-
 struct Solution;
-

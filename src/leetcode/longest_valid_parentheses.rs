@@ -1,18 +1,23 @@
 //! 32. Longest Valid Parentheses
 
 impl Solution {
-
     // very smart solution
     pub fn longest_valid_parentheses(s: String) -> i32 {
-        if s.is_empty() { return 0 }
+        if s.is_empty() {
+            return 0;
+        }
         let chars: Vec<char> = s.chars().collect();
         let mut max = usize::MIN;
 
         let mut left = 0;
         let mut right = 0;
         for char in &chars {
-            if *char == '(' { left += 1; }
-            if *char == ')' { right += 1; }
+            if *char == '(' {
+                left += 1;
+            }
+            if *char == ')' {
+                right += 1;
+            }
             if left == right {
                 max = max.max(right * 2);
             } else if right > left {
@@ -24,8 +29,12 @@ impl Solution {
         let mut left = 0;
         let mut right = 0;
         for char in chars.iter().rev() {
-            if *char == '(' { left += 1; }
-            if *char == ')' { right += 1; }
+            if *char == '(' {
+                left += 1;
+            }
+            if *char == ')' {
+                right += 1;
+            }
             if left == right {
                 max = max.max(right * 2);
             } else if left > right {
@@ -37,10 +46,11 @@ impl Solution {
         max as i32
     }
 
-
     // dynamic programming
     pub fn longest_valid_parentheses_dp(s: String) -> i32 {
-        if s.is_empty() { return 0 }
+        if s.is_empty() {
+            return 0;
+        }
 
         let chars: Vec<char> = s.chars().collect();
         let mut buf = vec![0; chars.len()];
@@ -63,8 +73,8 @@ impl Solution {
                                 buf[idx] = buf[idx].max(cur_len);
                             }
                         }
-                    },
-                    _ => ()
+                    }
+                    _ => (),
                 }
             }
         }
@@ -72,7 +82,6 @@ impl Solution {
         println!("{:?}", buf);
         *buf.iter().max().unwrap()
     }
-
 }
 
 struct Solution;

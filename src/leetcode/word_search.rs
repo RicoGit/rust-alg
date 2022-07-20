@@ -21,22 +21,22 @@ impl Solution {
         let next = &word[0];
         let cur = &board[row][col];
 
-        if cur == next{
+        if cur == next {
             let remain = &word[1..];
             if row > 0 {
-                return Self::backtrack(board, remain, row-1, col)
+                return Self::backtrack(board, remain, row - 1, col);
             }
 
-            if row < board.len()-1 {
-                return Self::backtrack(board, remain, row+1, col)
+            if row < board.len() - 1 {
+                return Self::backtrack(board, remain, row + 1, col);
             }
 
             if col > 0 {
-                return Self::backtrack(board, remain, row, col-1)
+                return Self::backtrack(board, remain, row, col - 1);
             }
 
-            if col < board[0].len()-1 {
-                return Self::backtrack(board, remain, row, col+1)
+            if col < board[0].len() - 1 {
+                return Self::backtrack(board, remain, row, col + 1);
             }
         }
 

@@ -26,7 +26,7 @@ impl Solution {
         (match end.checked_sub(start) {
             None => 0,
             Some(0) => 0,
-            Some(v) => v+1
+            Some(v) => v + 1,
         }) as i32
     }
 
@@ -35,7 +35,7 @@ impl Solution {
         let mut clone = nums.clone();
         clone.sort();
 
-        let mut start = nums.len()-1;
+        let mut start = nums.len() - 1;
         let mut end = 0;
         for idx in 0..nums.len() {
             if nums[idx] != clone[idx] {
@@ -47,7 +47,7 @@ impl Solution {
         (match end.checked_sub(start) {
             None => 0,
             Some(0) => 0,
-            Some(v) => v+1
+            Some(v) => v + 1,
         }) as i32
     }
 }

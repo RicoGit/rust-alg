@@ -3,15 +3,12 @@
 use rand::RngCore;
 
 struct Solution {
-    nums: Vec<i32>
+    nums: Vec<i32>,
 }
 
 impl Solution {
-
     fn new(nums: Vec<i32>) -> Self {
-        Solution {
-            nums
-        }
+        Solution { nums }
     }
 
     fn reset(&self) -> Vec<i32> {
@@ -28,10 +25,8 @@ impl Solution {
         arr
     }
 
-    fn gen(n: usize)-> usize {
+    fn gen(n: usize) -> usize {
         let mut rng = rand::thread_rng();
         (rng.next_u64() as usize) % n
     }
 }
-
-

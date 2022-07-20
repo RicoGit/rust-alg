@@ -1,6 +1,5 @@
 //! 745. Prefix and Suffix Search
 
-
 #[derive(Default)]
 struct TrieNode {
     index: i32,
@@ -12,7 +11,6 @@ struct WordFilter {
 }
 
 impl WordFilter {
-
     fn new(words: Vec<String>) -> Self {
         let mut trie = TrieNode::default();
         for (i, word) in words.iter().enumerate() {
@@ -41,7 +39,6 @@ impl WordFilter {
         node.index
     }
 }
-
 
 mod time_limit_exceed_solution {
 
@@ -162,9 +159,7 @@ mod time_limit_exceed_solution {
     }
 
     struct Solution;
-
 }
-
 
 #[cfg(test)]
 mod tests {

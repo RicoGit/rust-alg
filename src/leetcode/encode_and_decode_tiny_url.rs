@@ -6,7 +6,7 @@ use std::time::{SystemTime, UNIX_EPOCH};
 
 struct Codec {
     hashtable: HashMap<String, String>, // keys - short Urls
-    ascii_chars: Vec<char>
+    ascii_chars: Vec<char>,
 }
 
 impl Codec {
@@ -18,14 +18,17 @@ impl Codec {
         alfa_chars.extend(lower);
         Codec {
             hashtable: HashMap::new(),
-            ascii_chars: alfa_chars
+            ascii_chars: alfa_chars,
         }
     }
 
     /// Encodes a URL to a shortened URL.
     /// Starts from 3-chars-length string and add new char in case of collision
     fn encode(&mut self, long_url: String) -> String {
-        let mut short_url: String = (0..3).into_iter().map(|_| self.random_ascii_char()).collect();
+        let mut short_url: String = (0..3)
+            .into_iter()
+            .map(|_| self.random_ascii_char())
+            .collect();
 
         while let Some(existed) = self.hashtable.get(&short_url) {
             short_url.push(self.random_ascii_char())

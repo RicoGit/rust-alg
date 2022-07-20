@@ -12,15 +12,20 @@ impl Solution {
 
         let mut result = 0;
         for cnt in buf {
-            if cnt % 2 == 0 { result += cnt; }
+            if cnt % 2 == 0 {
+                result += cnt;
+            }
             if cnt % 2 == 1 {
-                if result % 2 == 1 { result += cnt - 1 } else { result += cnt }
+                if result % 2 == 1 {
+                    result += cnt - 1
+                } else {
+                    result += cnt
+                }
             }
         }
 
         result
     }
 }
-
 
 struct Solution;

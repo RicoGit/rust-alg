@@ -24,10 +24,9 @@ impl Solution {
             }
         }
 
-        nums1.into_iter()
-            .map(|num| {
-                *map.get(&num).unwrap_or(&-1)
-            })
+        nums1
+            .into_iter()
+            .map(|num| *map.get(&num).unwrap_or(&-1))
             .collect::<Vec<_>>()
     }
 }

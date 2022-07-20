@@ -1,4 +1,3 @@
-
 /// Cross-validation is a technique used to create a more accurate estimate of model prediction performance.
 /// The idea is to partition the original sample into a training set (used for learning) and a testing set
 /// (used for validation). One type of cross-validation is the k-fold method.
@@ -23,6 +22,4 @@
 /// the elements of indices are all distinct.
 struct Solution;
 
-impl Solution {
-
-}
+impl Solution {}

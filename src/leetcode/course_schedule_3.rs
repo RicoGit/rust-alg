@@ -45,7 +45,6 @@ impl Solution {
                     time -= max_dur;
                 }
             }
-
         }
         durations.len() as i32
     }

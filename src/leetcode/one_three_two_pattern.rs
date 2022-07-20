@@ -1,7 +1,6 @@
 //! 456. 132 Pattern
 
 impl Solution {
-
     /// fast O(n)
     pub fn find132pattern(nums: Vec<i32>) -> bool {
         let mut stack = vec![];

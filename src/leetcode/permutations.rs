@@ -1,7 +1,6 @@
 use std::collections::VecDeque;
 
 impl Solution {
-
     // iterative
     pub fn permute(nums: Vec<i32>) -> Vec<Vec<i32>> {
         let n = nums.len();
@@ -43,12 +42,10 @@ impl Solution {
                 solution.push(nums[idx]);
                 result.push(solution)
             }
-
         }
 
         result
     }
-
 }
 struct Solution;
 

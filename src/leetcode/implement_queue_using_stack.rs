@@ -9,7 +9,7 @@ impl MyQueue {
     fn new() -> Self {
         MyQueue {
             stack: vec![],
-            rev: vec![]
+            rev: vec![],
         }
     }
 

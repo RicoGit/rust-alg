@@ -5,16 +5,20 @@ use std::collections::{HashMap, HashSet};
 
 impl Solution {
     pub fn max_points(points: Vec<Vec<i32>>) -> i32 {
-        if points.len() == 0 { return 0 }
-        if points.len() == 1 { return 1 }
+        if points.len() == 0 {
+            return 0;
+        }
+        if points.len() == 1 {
+            return 1;
+        }
 
         let mut ans = 0;
-        for idx1 in 0..points.len()-1 {
+        for idx1 in 0..points.len() - 1 {
             let p1 = (points[idx1][0], points[idx1][1]);
             let mut equations = HashMap::new();
             let mut same_point = 0;
             let mut same_line = 1;
-            for idx2 in idx1+1..points.len() {
+            for idx2 in idx1 + 1..points.len() {
                 let p2 = (points[idx2][0], points[idx2][1]);
                 if p1 == p2 {
                     same_point += 1;
@@ -46,7 +50,7 @@ struct Solution;
 enum Equation {
     Vertical { x: i32 },
     Horizontal { y: i32 },
-    Slope { delta_y: i32, delta_x: i32 }
+    Slope { delta_y: i32, delta_x: i32 },
 }
 
 impl Equation {
@@ -58,12 +62,15 @@ impl Equation {
         let mut dy = (y2 - y1);
 
         if dx == 0 {
-            return Equation::Vertical{ x: x1 }
+            return Equation::Vertical { x: x1 };
         } else if dy == 0 {
-            return Equation::Horizontal{ y: y1 }
+            return Equation::Horizontal { y: y1 };
         } else {
             let g = gcd(dx, dy);
-            return Equation::Slope { delta_y: dy / g, delta_x: dx / g }
+            return Equation::Slope {
+                delta_y: dy / g,
+                delta_x: dx / g,
+            };
         }
     }
 }
@@ -76,7 +83,6 @@ fn gcd(mut a: i32, mut b: i32) -> i32 {
     }
     a
 }
-
 
 #[cfg(test)]
 mod tests {

@@ -5,7 +5,7 @@ impl Solution {
         let mut negative_cnt = 0;
         for num in nums {
             if num == 0 {
-                return 0
+                return 0;
             }
             if num.is_negative() {
                 negative_cnt += 1;

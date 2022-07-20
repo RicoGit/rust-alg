@@ -5,16 +5,20 @@ impl Solution {
         let mut swap = vec![];
         let str1 = s1.into_bytes();
         for (idx, ch2) in s2.bytes().enumerate() {
-            if str1[idx] != ch2 { swap.push((idx, ch2)) }
-            if swap.len() > 2 { return false }
+            if str1[idx] != ch2 {
+                swap.push((idx, ch2))
+            }
+            if swap.len() > 2 {
+                return false;
+            }
         }
 
         if swap.len() == 0 {
-            return true
+            return true;
         }
 
         if swap.len() == 2 && str1[swap[0].0] == swap[1].1 && str1[swap[1].0] == swap[0].1 {
-            return true
+            return true;
         }
 
         false

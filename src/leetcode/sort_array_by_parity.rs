@@ -10,10 +10,10 @@ impl Solution {
 /// 2 pointers time: O(n), space O(1)
 fn two_pointers(nums: &mut Vec<i32>) {
     let mut start = 0;
-    let mut end = nums.len()-1;
+    let mut end = nums.len() - 1;
 
     while start < end {
-        if nums[start]%2 > nums[end]%2 {
+        if nums[start] % 2 > nums[end] % 2 {
             swap(nums, start, end)
         }
         start += 1;

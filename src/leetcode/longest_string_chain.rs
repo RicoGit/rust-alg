@@ -17,15 +17,18 @@ impl Solution {
     }
 
     fn chain_length(words: &[String], cache: &mut [i32], idx: usize) -> i32 {
-
         if cache[idx] != 1 || words[idx].len() == 1 {
-            return cache[idx]
+            return cache[idx];
         }
 
-        for next_idx in idx+1..words.len() {
+        for next_idx in idx + 1..words.len() {
             let diff = words[idx].len() - words[next_idx].len();
-            if diff == 0 { continue }
-            if diff > 1 { break } // early return
+            if diff == 0 {
+                continue;
+            }
+            if diff > 1 {
+                break;
+            } // early return
 
             if is_predecessor(words[next_idx].as_bytes(), words[idx].as_bytes()) {
                 cache[idx] = cache[idx].max(Self::chain_length(words, cache, next_idx) + 1);
@@ -34,7 +37,6 @@ impl Solution {
 
         cache[idx]
     }
-
 }
 
 fn is_predecessor(w1: &[u8], w2: &[u8]) -> bool {
@@ -48,7 +50,9 @@ fn is_predecessor(w1: &[u8], w2: &[u8]) -> bool {
                 idx1 += 1;
                 idx2 += 1;
             } else {
-                if not_eq { return false }
+                if not_eq {
+                    return false;
+                }
                 not_eq = true;
                 idx2 += 1;
             }

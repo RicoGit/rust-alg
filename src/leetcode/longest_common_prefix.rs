@@ -13,7 +13,7 @@ impl Solution {
     fn find_prefix(str1: String, str2: String) -> String {
         for idx in 0..(str1.len().min(str2.len())) {
             if &str1[idx..=idx] != &str2[idx..=idx] {
-                return str1[0..idx].to_string()
+                return str1[0..idx].to_string();
             }
         }
         str1

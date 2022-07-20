@@ -7,14 +7,14 @@ impl Solution {
 
         for idx in 0..buf.len() {
             if !buf[idx] {
-                continue
+                continue;
             }
 
             for word in word_dict.iter() {
-                if idx+word.len() < buf.len() {
-                    let candidate = &s[idx..idx+word.len()];
+                if idx + word.len() < buf.len() {
+                    let candidate = &s[idx..idx + word.len()];
                     if candidate == *word {
-                        buf[idx+word.len()] = true;
+                        buf[idx + word.len()] = true;
                     }
                 }
             }
@@ -23,6 +23,5 @@ impl Solution {
         buf[s.len()]
     }
 }
-
 
 struct Solution;

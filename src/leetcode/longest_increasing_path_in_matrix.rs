@@ -12,49 +12,53 @@ impl Solution {
         max as i32
     }
 
-    fn traverse(matrix: &Vec<Vec<i32>>, row: usize, col: usize, max: &mut usize, buf: &mut Vec<Vec<i32>>) -> i32 {
+    fn traverse(
+        matrix: &Vec<Vec<i32>>,
+        row: usize,
+        col: usize,
+        max: &mut usize,
+        buf: &mut Vec<Vec<i32>>,
+    ) -> i32 {
+        if buf[row][col] == -1 {
+            buf[row][col] = 1
+        };
 
-        if buf[row][col] == -1 { buf[row][col] = 1 };
-
-        if row > 0 && matrix[row][col] < matrix[row-1][col] {
-            let next_size = if buf[row-1][col] == -1 {
-                Self::traverse(matrix, row-1, col, max, buf)
+        if row > 0 && matrix[row][col] < matrix[row - 1][col] {
+            let next_size = if buf[row - 1][col] == -1 {
+                Self::traverse(matrix, row - 1, col, max, buf)
             } else {
-                buf[row-1][col]
+                buf[row - 1][col]
             };
             buf[row][col] = buf[row][col].max(next_size + 1)
         }
-        if row < matrix.len()-1 && matrix[row][col] < matrix[row+1][col] {
-            let next_size = if buf[row+1][col] == -1 {
-                Self::traverse(matrix, row+1, col, max, buf)
+        if row < matrix.len() - 1 && matrix[row][col] < matrix[row + 1][col] {
+            let next_size = if buf[row + 1][col] == -1 {
+                Self::traverse(matrix, row + 1, col, max, buf)
             } else {
-                buf[row+1][col]
+                buf[row + 1][col]
             };
             buf[row][col] = buf[row][col].max(next_size + 1)
         }
-        if col > 0 && matrix[row][col] < matrix[row][col-1] {
-            let next_size = if buf[row][col-1] == -1 {
-                Self::traverse(matrix, row, col-1, max, buf)
+        if col > 0 && matrix[row][col] < matrix[row][col - 1] {
+            let next_size = if buf[row][col - 1] == -1 {
+                Self::traverse(matrix, row, col - 1, max, buf)
             } else {
-                buf[row][col-1]
+                buf[row][col - 1]
             };
             buf[row][col] = buf[row][col].max(next_size + 1)
-
         }
-        if col < matrix[0].len()-1 && matrix[row][col] < matrix[row][col+1] {
-            let next_size =  if buf[row][col+1] == -1 {
-                Self::traverse(matrix, row, col+1, max, buf)
+        if col < matrix[0].len() - 1 && matrix[row][col] < matrix[row][col + 1] {
+            let next_size = if buf[row][col + 1] == -1 {
+                Self::traverse(matrix, row, col + 1, max, buf)
             } else {
-                buf[row][col+1]
+                buf[row][col + 1]
             };
             buf[row][col] = buf[row][col].max(next_size + 1)
-
         }
         let answer = buf[row][col];
         *max = usize::max(*max, answer as usize);
         answer
     }
 }
-
 
 struct Solution;

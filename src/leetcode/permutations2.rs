@@ -1,13 +1,14 @@
 //! 47. Permutations II
 
-use std::collections::{VecDeque, HashSet};
+use std::collections::{HashSet, VecDeque};
 
 impl Solution {
-
     //recursive
     pub fn permute_unique(mut nums: Vec<i32>) -> Vec<Vec<i32>> {
         fn dfs(nums: Vec<i32>) -> Vec<Vec<i32>> {
-            if nums.is_empty() { return vec![vec![]] }
+            if nums.is_empty() {
+                return vec![vec![]];
+            }
 
             let mut result = vec![];
             let mut prev = i32::MIN;
@@ -49,7 +50,7 @@ impl Solution {
                 let answer = queue.pop_back().unwrap();
                 for idx2 in 0..=answer.len() {
                     if idx2 != answer.len() && answer[idx2] == nums[idx1] {
-                        continue // optimization
+                        continue; // optimization
                     }
 
                     let new_ans = [&answer[0..idx2], &[nums[idx1]], &answer[idx2..]].concat();
@@ -71,12 +72,7 @@ mod test {
 
     #[test]
     fn test1() {
-        let res = Solution::permute_unique(vec![1,1,2]);
-        assert_eq!(
-            res,
-            vec![
-                vec![1, 2, 1], vec![1, 1, 2], vec![2, 1, 1]
-            ]
-        )
+        let res = Solution::permute_unique(vec![1, 1, 2]);
+        assert_eq!(res, vec![vec![1, 2, 1], vec![1, 1, 2], vec![2, 1, 1]])
     }
 }

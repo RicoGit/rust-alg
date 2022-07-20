@@ -2,7 +2,10 @@
 
 impl Solution {
     pub fn minimum_length_encoding(words: Vec<String>) -> i32 {
-        let mut reversed: Vec<String> = words.into_iter().map(|w| w.chars().rev().collect()).collect();
+        let mut reversed: Vec<String> = words
+            .into_iter()
+            .map(|w| w.chars().rev().collect())
+            .collect();
         reversed.sort();
         let mut result = reversed[0].len() + 1;
         for pair in reversed.windows(2) {

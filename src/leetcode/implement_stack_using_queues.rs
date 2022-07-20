@@ -1,6 +1,5 @@
 //! 225. Implement Stack using Queues
 
-
 use std::collections::LinkedList;
 
 #[derive(Debug)]
@@ -12,10 +11,9 @@ struct MyStack {
 // queue <1, 2, 4]
 // stack 3 5
 impl MyStack {
-
     fn new() -> Self {
         MyStack {
-            q: LinkedList::new()
+            q: LinkedList::new(),
         }
     }
 

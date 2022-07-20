@@ -6,13 +6,17 @@ impl Solution {
         for idx in 0..command.len() {
             let cur = &command[idx..=idx];
             match cur {
-                "G" => { result += "G"; },
-                "(" => {
-                    match &command[idx+1..=idx+1] {
-                        ")" => { result += "o"; },
-                        "a" => { result += "al"; },
-                        _ => ()
+                "G" => {
+                    result += "G";
+                }
+                "(" => match &command[idx + 1..=idx + 1] {
+                    ")" => {
+                        result += "o";
                     }
+                    "a" => {
+                        result += "al";
+                    }
+                    _ => (),
                 },
                 _ => {}
             }

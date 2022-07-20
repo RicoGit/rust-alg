@@ -12,7 +12,7 @@ impl Solution {
 
         if idx == graph.len() - 1 {
             result.push(path); // we reach last node
-            return
+            return;
         }
 
         for edge in graph[idx].clone() {

@@ -1,19 +1,33 @@
 //! 695. Max Area of Island
 
 impl Solution {
-
     // version 2
     pub fn max_area_of_island(grid: Vec<Vec<i32>>) -> i32 {
-        fn visit(grid: &Vec<Vec<i32>>, row: usize, col: usize, visited: &mut Vec<Vec<bool>>) -> i32 {
+        fn visit(
+            grid: &Vec<Vec<i32>>,
+            row: usize,
+            col: usize,
+            visited: &mut Vec<Vec<bool>>,
+        ) -> i32 {
             let cur = grid[row][col];
-            if cur == 0 || visited[row][col] { return 0 }
+            if cur == 0 || visited[row][col] {
+                return 0;
+            }
             visited[row][col] = true;
 
             let mut area = 1;
-            if row > 0 { area += visit(&grid, row-1, col, visited) }
-            if row < grid.len()-1 { area += visit(&grid, row+1, col, visited) }
-            if col > 0 { area += visit(&grid, row, col-1, visited) }
-            if col < grid[0].len()-1 { area += visit(&grid, row, col+1, visited) }
+            if row > 0 {
+                area += visit(&grid, row - 1, col, visited)
+            }
+            if row < grid.len() - 1 {
+                area += visit(&grid, row + 1, col, visited)
+            }
+            if col > 0 {
+                area += visit(&grid, row, col - 1, visited)
+            }
+            if col < grid[0].len() - 1 {
+                area += visit(&grid, row, col + 1, visited)
+            }
 
             area
         }

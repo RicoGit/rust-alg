@@ -8,10 +8,10 @@ impl Solution {
         let mut result = 0;
 
         for num in &nums {
-            if !set.contains(&(num-1)) {
+            if !set.contains(&(num - 1)) {
                 let mut cur = *num;
                 let mut count = 1;
-                while set.contains(&(cur+1)) {
+                while set.contains(&(cur + 1)) {
                     cur += 1;
                     count += 1;
                 }

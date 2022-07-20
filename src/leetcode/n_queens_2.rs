@@ -5,14 +5,14 @@ use std::collections::HashSet;
 #[derive(Debug)]
 struct Board {
     board: Vec<Vec<bool>>,
-    queens: HashSet<(usize, usize)>
+    queens: HashSet<(usize, usize)>,
 }
 
 impl Board {
     fn new(n: usize) -> Self {
         Board {
             board: vec![vec![false; n]; n],
-            queens: HashSet::new()
+            queens: HashSet::new(),
         }
     }
 
@@ -48,7 +48,6 @@ impl Board {
     fn is_not_under_attack(&self, row: usize, col: usize) -> bool {
         !self.board[row][col]
     }
-
 
     fn remove(&mut self, row: usize, col: usize) {
         if self.queens.remove(&(row, col)) {

@@ -6,17 +6,16 @@ struct Board {
     size: usize,
     under_attack: Vec<Vec<bool>>,
     results: Vec<Vec<String>>,
-    queens: HashSet<(usize, usize)>
+    queens: HashSet<(usize, usize)>,
 }
 
 impl Board {
-
     fn new(size: usize) -> Self {
         Board {
             size,
             under_attack: vec![vec![false]],
             results: vec![],
-            queens: HashSet::new()
+            queens: HashSet::new(),
         }
     }
 
@@ -39,7 +38,10 @@ impl Board {
         for &(row, col) in &self.queens {
             result[row][col] = 'Q'
         }
-        let result = result.into_iter().map(|row| row.iter().collect::<String>()).collect();
+        let result = result
+            .into_iter()
+            .map(|row| row.iter().collect::<String>())
+            .collect();
         self.results.push(result);
     }
 
@@ -64,7 +66,6 @@ impl Board {
         }
     }
 }
-
 
 impl Solution {
     pub fn solve_n_queens(n: i32) -> Vec<Vec<String>> {

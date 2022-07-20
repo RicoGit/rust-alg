@@ -21,26 +21,25 @@ impl Solution {
         let current = grid[row_idx][col_idx];
 
         if current != '1' {
-            return
+            return;
         }
 
         grid[row_idx][col_idx] = 'x'; // mark as visited
 
         if row_idx > 0 {
-            Self::mark_island(grid, row_idx-1, col_idx)
+            Self::mark_island(grid, row_idx - 1, col_idx)
         }
 
         if row_idx < grid.len() - 1 {
-            Self::mark_island(grid, row_idx+1, col_idx)
+            Self::mark_island(grid, row_idx + 1, col_idx)
         }
         if col_idx > 0 {
-            Self::mark_island(grid, row_idx, col_idx-1)
+            Self::mark_island(grid, row_idx, col_idx - 1)
         }
 
         if col_idx < grid[row_idx].len() - 1 {
-            Self::mark_island(grid, row_idx, col_idx+1)
+            Self::mark_island(grid, row_idx, col_idx + 1)
         }
-
     }
 }
 

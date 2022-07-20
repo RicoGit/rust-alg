@@ -1,12 +1,16 @@
 //! 1465. Maximum Area of a Piece of Cake After Horizontal and Vertical Cuts
 
 impl Solution {
-    pub fn max_area(h: i32, w: i32, mut horizontal_cuts: Vec<i32>, mut vertical_cuts: Vec<i32>) -> i32 {
-
+    pub fn max_area(
+        h: i32,
+        w: i32,
+        mut horizontal_cuts: Vec<i32>,
+        mut vertical_cuts: Vec<i32>,
+    ) -> i32 {
         fn max_diff(arr: &[i32]) -> i64 {
             let mut max = i32::MIN;
             for pair in arr.windows(2) {
-                max = max.max(pair[1]-pair[0]);
+                max = max.max(pair[1] - pair[0]);
             }
             max as i64
         }

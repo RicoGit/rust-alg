@@ -6,8 +6,8 @@ impl Solution {
         let mut buf = vec![0; cost.len()];
 
         for idx in (0..cost.len()).rev() {
-            let one_step = buf.get(idx+1).unwrap_or(&0);
-            let two_steps = buf.get(idx+2).unwrap_or(&0);
+            let one_step = buf.get(idx + 1).unwrap_or(&0);
+            let two_steps = buf.get(idx + 2).unwrap_or(&0);
             buf[idx] = cost[idx] + one_step.min(two_steps);
         }
 

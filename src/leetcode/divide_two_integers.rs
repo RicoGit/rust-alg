@@ -7,8 +7,12 @@ impl Solution {
         let mut divisor = (divisor as i64).abs();
         let mut dividend = (dividend as i64).abs();
 
-        if divisor == 1 { return compose(dividend, negative) }
-        if dividend < divisor { return 0 }
+        if divisor == 1 {
+            return compose(dividend, negative);
+        }
+        if dividend < divisor {
+            return 0;
+        }
 
         let mut n = 1;
         while dividend > divisor {

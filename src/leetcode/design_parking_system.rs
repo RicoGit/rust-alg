@@ -1,14 +1,13 @@
 //! 1603. Design Parking System
 
 struct ParkingSystem {
-    slots: Vec<usize>
+    slots: Vec<usize>,
 }
 
 impl ParkingSystem {
-
     fn new(big: i32, medium: i32, small: i32) -> Self {
         ParkingSystem {
-            slots: vec![big as usize, medium as usize, small as usize]
+            slots: vec![big as usize, medium as usize, small as usize],
         }
     }
 

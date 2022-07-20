@@ -3,7 +3,7 @@
 impl Solution {
     pub fn min_moves2(mut nums: Vec<i32>) -> i32 {
         // let median = Self::simple_median(&mut nums);
-        let median = Self::quick_select_median(&nums, nums.len()/2);
+        let median = Self::quick_select_median(&nums, nums.len() / 2);
         let mut total = 0;
         for num in nums {
             total += (num - median).abs();
@@ -14,12 +14,11 @@ impl Solution {
     /// Sorting O(nlogn)
     fn simple_median(nums: &mut Vec<i32>) -> i32 {
         nums.sort();
-        nums[nums.len()/2]
+        nums[nums.len() / 2]
     }
 
     /// Quick select median O(logn)
     fn quick_select_median(nums: &[i32], idx: usize) -> i32 {
-
         fn gen(max: usize) -> usize {
             use rand::RngCore;
             let mut rng = rand::thread_rng();
@@ -27,7 +26,7 @@ impl Solution {
         }
 
         if nums.len() == 1 && idx == 0 {
-            return nums[0]
+            return nums[0];
         }
 
         let pivot_idx = gen(nums.len());

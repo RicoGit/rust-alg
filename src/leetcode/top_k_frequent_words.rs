@@ -14,8 +14,10 @@ impl Solution {
         let mut freq = map.into_iter().map(|t| (t.1, t.0)).collect::<Vec<_>>();
         freq.sort();
 
-        freq.into_iter().take(k as usize).map(|t| t.1).collect::<Vec<_>>()
-
+        freq.into_iter()
+            .take(k as usize)
+            .map(|t| t.1)
+            .collect::<Vec<_>>()
     }
 }
 

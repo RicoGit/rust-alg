@@ -18,8 +18,6 @@ impl Solution {
     }
 }
 
-
-
 struct Solution;
 
 #[cfg(test)]
@@ -28,11 +26,18 @@ mod test {
 
     #[test]
     fn test1() {
-        let res = Solution::subsets(vec![1,2,3]);
+        let res = Solution::subsets(vec![1, 2, 3]);
         assert_eq!(
             res,
             vec![
-                vec![], vec![1], vec![2], vec![1, 2], vec![3], vec![1, 3], vec![2, 3], vec![1, 2, 3],
+                vec![],
+                vec![1],
+                vec![2],
+                vec![1, 2],
+                vec![3],
+                vec![1, 3],
+                vec![2, 3],
+                vec![1, 2, 3],
             ]
         )
     }

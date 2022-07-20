@@ -1,7 +1,6 @@
 //! 1354. Construct Target Array With Multiple Sums
 
 impl Solution {
-
     pub fn is_possible(target: Vec<i32>) -> bool {
         use std::collections::BinaryHeap;
 
@@ -18,7 +17,7 @@ impl Solution {
             if x == 1 || sum == 1 {
                 return true;
             }
-            if sum >= x || sum == 0  {
+            if sum >= x || sum == 0 {
                 return false;
             }
             x = x % sum; // reduces number of iterations

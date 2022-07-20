@@ -4,19 +4,17 @@ struct MyCircularQueue {
     q: Vec<i32>,
     size: usize,
     head: usize,
-    tail: usize
+    tail: usize,
 }
 
 impl MyCircularQueue {
-
     fn new(k: i32) -> Self {
         MyCircularQueue {
             q: vec![-1; k as usize],
             size: k as usize,
             head: 0,
-            tail: 0
+            tail: 0,
         }
-
     }
 
     fn en_queue(&mut self, value: i32) -> bool {
@@ -51,7 +49,11 @@ impl MyCircularQueue {
         if self.is_empty() {
             -1
         } else {
-            let prev = if self.tail == 0 { self.size - 1 } else { self.tail - 1 };
+            let prev = if self.tail == 0 {
+                self.size - 1
+            } else {
+                self.tail - 1
+            };
             self.q[prev]
         }
     }

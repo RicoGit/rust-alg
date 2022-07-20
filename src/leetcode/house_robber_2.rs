@@ -6,10 +6,7 @@ impl Solution {
             0 => 0,
             1 => nums[0],
             2 => i32::max(nums[0], nums[1]),
-            _ => i32::max(
-                Self::dp(&nums[..(nums.len()-1)]),
-                Self::dp(&nums[1..]),
-            )
+            _ => i32::max(Self::dp(&nums[..(nums.len() - 1)]), Self::dp(&nums[1..])),
         }
     }
 

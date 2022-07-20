@@ -1,10 +1,11 @@
 //! 413. Arithmetic Slices
 
 impl Solution {
-
     // fast
     pub fn number_of_arithmetic_slices(nums: Vec<i32>) -> i32 {
-        if nums.len() < 3 { return 0 }
+        if nums.len() < 3 {
+            return 0;
+        }
 
         let mut result = 0;
         let mut last = 0;

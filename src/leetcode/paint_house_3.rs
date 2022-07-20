@@ -12,7 +12,7 @@ impl Solution {
                 buf[0][1][color as usize - 1] = 0;
             } else if houses[0] == 0 {
                 // If the house is not painted, assign the corresponding cost
-                buf[0][1][color as usize -1] = cost[0][color as usize - 1]
+                buf[0][1][color as usize - 1] = cost[0][color as usize - 1]
             }
         }
 
@@ -23,14 +23,17 @@ impl Solution {
                     let house = houses[h_idx];
 
                     // If the house is already painted, and color is different
-                    if house != 0 && color != house { continue }
+                    if house != 0 && color != house {
+                        continue;
+                    }
 
                     let mut current_cost = MAX_COST;
                     // Iterate over all the possible color for previous house
                     for prev_color in 1..=n {
                         if color != prev_color {
                             // Decrement the neighborhood as adjacent houses has different color
-                            current_cost = current_cost.min(buf[h_idx - 1][n_idx-1][prev_color as usize - 1]);
+                            current_cost = current_cost
+                                .min(buf[h_idx - 1][n_idx - 1][prev_color as usize - 1]);
                         } else {
                             // Previous house has the same color, no change in neighborhood count
                             current_cost = current_cost.min(buf[h_idx - 1][n_idx][c_idx - 1]);
@@ -38,14 +41,25 @@ impl Solution {
                     }
 
                     // If the house is already painted, cost to paint is 0
-                    let cost_to_paint = if house != 0 { 0 } else { cost[h_idx][c_idx - 1] };
+                    let cost_to_paint = if house != 0 {
+                        0
+                    } else {
+                        cost[h_idx][c_idx - 1]
+                    };
                     buf[h_idx][n_idx][c_idx - 1] = current_cost + cost_to_paint;
                 }
             }
         }
         println!("{:?}", buf);
-        let res = *buf[m as usize - 1][target as usize].iter().min().unwrap_or(&-1);
-        if res >= MAX_COST { -1 } else { res }
+        let res = *buf[m as usize - 1][target as usize]
+            .iter()
+            .min()
+            .unwrap_or(&-1);
+        if res >= MAX_COST {
+            -1
+        } else {
+            res
+        }
     }
 }
 

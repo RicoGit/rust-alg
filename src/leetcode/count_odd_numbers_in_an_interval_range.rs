@@ -14,7 +14,7 @@ impl Solution {
 
     // slow O(n)
     pub fn count_odds_(low: i32, high: i32) -> i32 {
-        (low..=high).filter(|n| n%2 != 0).count() as i32
+        (low..=high).filter(|n| n % 2 != 0).count() as i32
     }
 }
 

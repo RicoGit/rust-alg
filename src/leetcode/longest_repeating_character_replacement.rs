@@ -1,9 +1,7 @@
 //! 424. Longest Repeating Character Replacement (quite difficult)
 
 impl Solution {
-
     pub fn character_replacement(s: String, k: i32) -> i32 {
-
         let mut freq = vec![0; 26];
         let bytes = s.into_bytes();
         let (mut start, mut end) = (0, 0);
@@ -26,7 +24,6 @@ impl Solution {
         }
         result as i32
     }
-
 }
 
 struct Solution;

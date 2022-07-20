@@ -1,6 +1,5 @@
 //! 1584. Min Cost to Connect All Points
 
-
 use std::cmp::{Ordering, Reverse};
 use std::collections::{BinaryHeap, HashMap, HashSet};
 
@@ -32,9 +31,9 @@ impl Solution {
                     visited_count += 1;
                     current_idx = p_idx;
                     result += min_dist;
-                    break
+                    break;
                 }
-            };
+            }
         }
 
         result

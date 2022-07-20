@@ -3,47 +3,47 @@
 // Definition for a binary tree node.
 #[derive(Debug, PartialEq, Eq)]
 pub struct TreeNode {
-  pub val: i32,
-  pub left: Option<Rc<RefCell<TreeNode>>>,
-  pub right: Option<Rc<RefCell<TreeNode>>>,
+    pub val: i32,
+    pub left: Option<Rc<RefCell<TreeNode>>>,
+    pub right: Option<Rc<RefCell<TreeNode>>>,
 }
 
 impl TreeNode {
-  #[inline]
-  pub fn new(val: i32) -> Self {
-    TreeNode {
-      val,
-      left: None,
-      right: None
+    #[inline]
+    pub fn new(val: i32) -> Self {
+        TreeNode {
+            val,
+            left: None,
+            right: None,
+        }
     }
-  }
 }
-use std::rc::Rc;
 use std::cell::RefCell;
+use std::rc::Rc;
 
 impl Solution {
-
     pub fn min_camera_cover(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
-
         #[derive(Clone, PartialEq, Eq)]
-        enum Camera {  HasCamera, Covered, NeedCover }
+        enum Camera {
+            HasCamera,
+            Covered,
+            NeedCover,
+        }
 
         fn solve(root: &Option<Rc<RefCell<TreeNode>>>, counter: &mut i32) -> Camera {
-            if root.is_none() { return Camera::Covered }
+            if root.is_none() {
+                return Camera::Covered;
+            }
 
             let node = root.as_ref().unwrap().borrow();
 
             match (solve(&node.left, counter), solve(&node.right, counter)) {
                 (Camera::NeedCover, _) | (_, Camera::NeedCover) => {
                     *counter += 1;
-                    return Camera::HasCamera
+                    return Camera::HasCamera;
                 }
-                (Camera::HasCamera, _) | (_, Camera::HasCamera) => {
-                    return Camera::Covered
-                }
-                (Camera::Covered, _) | (_, Camera::Covered) => {
-                    return Camera::NeedCover
-                }
+                (Camera::HasCamera, _) | (_, Camera::HasCamera) => return Camera::Covered,
+                (Camera::Covered, _) | (_, Camera::Covered) => return Camera::NeedCover,
             }
         }
 
@@ -57,32 +57,39 @@ impl Solution {
 
     // wrong solution
     pub fn min_camera_cover_wrong(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
-
         #[derive(Clone)]
-        enum Color { Red, Black, White }
+        enum Color {
+            Red,
+            Black,
+            White,
+        }
 
         impl Color {
             fn next(self) -> Self {
                 match self {
-                    Color::Red => { Color::Black }
-                    Color::Black => { Color::White }
-                    Color::White => { Color:: Red }
+                    Color::Red => Color::Black,
+                    Color::Black => Color::White,
+                    Color::White => Color::Red,
                 }
-
             }
         }
 
         // prev == true if previous node was black, false - if was red
-        fn dfs(root: &Option<Rc<RefCell<TreeNode>>>, red: &mut usize, black: &mut usize, white: &mut usize, prev: Color) {
-
+        fn dfs(
+            root: &Option<Rc<RefCell<TreeNode>>>,
+            red: &mut usize,
+            black: &mut usize,
+            white: &mut usize,
+            prev: Color,
+        ) {
             if let Some(cell) = root {
                 let node = cell.borrow();
 
                 let color = prev.next();
                 match color {
-                    Color::Red => { *red += 1 },
-                    Color::Black => { *black += 1 }
-                    Color::White => { *white += 1 }
+                    Color::Red => *red += 1,
+                    Color::Black => *black += 1,
+                    Color::White => *white += 1,
                 }
 
                 dfs(&node.left, black, white, red, color.clone());
@@ -97,8 +104,6 @@ impl Solution {
         dfs(&root, &mut red, &mut black, &mut white, Color::Red);
         black.min(red).max(1) as i32
     }
-
-
 }
 
 struct Solution;

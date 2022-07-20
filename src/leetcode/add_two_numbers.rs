@@ -9,15 +9,15 @@ pub struct ListNode {
 impl ListNode {
     #[inline]
     fn new(val: i32) -> Self {
-        ListNode {
-            next: None,
-            val,
-        }
+        ListNode { next: None, val }
     }
 }
 
 impl Solution {
-    pub fn add_two_numbers(mut l1: Option<Box<ListNode>>, mut l2: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
+    pub fn add_two_numbers(
+        mut l1: Option<Box<ListNode>>,
+        mut l2: Option<Box<ListNode>>,
+    ) -> Option<Box<ListNode>> {
         let mut dummy_head = ListNode::new(0);
         let mut cursor = &mut dummy_head;
         let mut carry = 0;

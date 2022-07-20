@@ -14,7 +14,7 @@ impl Solution {
         for idx in 0..guess.len() {
             let s_digit = secret[idx] - b'0';
             let g_digit = guess[idx] - b'0';
-            if s_digit == g_digit  {
+            if s_digit == g_digit {
                 bulls += 1;
             } else {
                 secret_freq[s_digit as usize] += 1;

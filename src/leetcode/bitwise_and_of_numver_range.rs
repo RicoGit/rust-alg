@@ -1,7 +1,6 @@
 //! 201. Bitwise AND of Numbers Range
 
 impl Solution {
-
     pub fn range_bitwise_and(mut left: i32, mut right: i32) -> i32 {
         let mut shift = 0;
 
@@ -12,7 +11,6 @@ impl Solution {
         }
         left << shift
     }
-
 
     pub fn range_bitwise_and_slow_iter(left: i32, right: i32) -> i32 {
         let mut result = right;
@@ -25,9 +23,7 @@ impl Solution {
     pub fn range_bitwise_and_slow_fold(left: i32, right: i32) -> i32 {
         let result = (left..right) // right not included
             .into_iter()
-            .fold(right, |acc, num| {
-                acc & num
-            });
+            .fold(right, |acc, num| acc & num);
 
         result
     }

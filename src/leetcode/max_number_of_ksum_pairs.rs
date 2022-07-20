@@ -14,7 +14,7 @@ impl Solution {
             if let Some(times) = map.remove(&n2) {
                 counter += 1;
                 if times > 1 {
-                    map.insert(n2, times-1);
+                    map.insert(n2, times - 1);
                 }
             } else {
                 *map.entry(n1).or_insert(0) += 1;

@@ -11,18 +11,17 @@ impl Solution {
 
     fn is_palindrome(s: String) -> bool {
         let mut start = 0;
-        let mut end = s.len()-1;
+        let mut end = s.len() - 1;
 
         while start < end {
-            if &s[start..start+1] != &s[end..end+1] {
-                return false
+            if &s[start..start + 1] != &s[end..end + 1] {
+                return false;
             }
             start += 1;
             end -= 1;
         }
         true
     }
-
 }
 
 struct Solution;

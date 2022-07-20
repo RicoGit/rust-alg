@@ -25,7 +25,9 @@ impl Solution {
     // wrong
     pub fn longest_common_subsequence_wrong(text1: String, text2: String) -> i32 {
         fn helper(source: &[char], target: &[char], count: usize, result: &mut usize) {
-            if target.is_empty() || source.is_empty() { return; }
+            if target.is_empty() || source.is_empty() {
+                return;
+            }
 
             for (idx, &ch) in source.iter().enumerate() {
                 if ch == target[0] {
@@ -44,5 +46,3 @@ impl Solution {
 }
 
 struct Solution;
-
-

@@ -9,8 +9,8 @@ impl Solution {
         for byte in str {
             if let Some((cur_byte, counter)) = stack.pop() {
                 if cur_byte == *byte {
-                    if counter+1 < k {
-                        stack.push((cur_byte, counter+1))
+                    if counter + 1 < k {
+                        stack.push((cur_byte, counter + 1))
                     }
                 } else {
                     stack.push((cur_byte, counter));
@@ -21,7 +21,13 @@ impl Solution {
             }
         }
 
-        String::from_utf8(stack.into_iter().flat_map(|(ch, num)| std::iter::repeat(ch).take(num as usize)).collect::<Vec<_>>()).unwrap()
+        String::from_utf8(
+            stack
+                .into_iter()
+                .flat_map(|(ch, num)| std::iter::repeat(ch).take(num as usize))
+                .collect::<Vec<_>>(),
+        )
+        .unwrap()
     }
 }
 

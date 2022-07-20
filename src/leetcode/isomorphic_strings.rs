@@ -9,7 +9,9 @@ impl Solution {
 
         for (idx, src) in s.bytes().enumerate() {
             if let Some(&trg) = map.get(&src) {
-                if trg != target[idx] { return false }
+                if trg != target[idx] {
+                    return false;
+                }
             } else {
                 map.insert(src, target[idx]);
             }

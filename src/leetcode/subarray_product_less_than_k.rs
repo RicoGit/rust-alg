@@ -3,9 +3,10 @@
 use std::collections::HashMap;
 
 impl Solution {
-
     pub fn num_subarray_product_less_than_k(mut nums: Vec<i32>, k: i32) -> i32 {
-        if k <= 1 { return 0 }
+        if k <= 1 {
+            return 0;
+        }
 
         let mut prod = 1;
         let mut result = 0;
@@ -22,7 +23,6 @@ impl Solution {
 
         result as i32
     }
-
 
     /// find all product less than k
     pub fn all_product_less_than_k_(mut nums: Vec<i32>, k: i32) -> i32 {
@@ -45,14 +45,14 @@ impl Solution {
                 Ok(idx) => {
                     for n in &nums[0..=idx] {
                         if *n > val {
-                            stack.push(n*val);
+                            stack.push(n * val);
                         }
                     }
-                },
+                }
                 Err(insert_idx) => {
                     for n in &nums[0..insert_idx] {
                         if *n > val {
-                            stack.push(n*val);
+                            stack.push(n * val);
                         }
                     }
                 }

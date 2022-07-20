@@ -6,7 +6,7 @@ impl Solution {
 
         let mut i = 0;
         let mut j = 0;
-        while i < first.len() && j < second.len()  {
+        while i < first.len() && j < second.len() {
             let (i_start, i_end) = (first[i][0], first[i][1]);
             let (j_start, j_end) = (second[j][0], second[j][1]);
 

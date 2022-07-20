@@ -4,7 +4,6 @@ use std::collections::{HashMap, HashSet};
 use std::iter::FromIterator;
 
 impl Solution {
-
     pub fn find_anagrams(mut s: String, mut p: String) -> Vec<i32> {
         let p_arr = p.chars().collect::<Vec<_>>();
         let p_size = p_arr.len();
@@ -14,7 +13,9 @@ impl Solution {
 
         // fill p string char's frequencies
         let mut p_map = HashMap::new();
-        for idx in 0..p_size { *p_map.entry(p_arr[idx]).or_insert(0) += 1 }
+        for idx in 0..p_size {
+            *p_map.entry(p_arr[idx]).or_insert(0) += 1
+        }
 
         let mut candidate = HashMap::new();
         let mut result = vec![];
@@ -27,18 +28,18 @@ impl Solution {
 
             // remove old if needed
             if end_idx >= p_size {
-                let start_idx = end_idx-(p_size);
+                let start_idx = end_idx - (p_size);
                 let prev = s_arr[start_idx];
                 if let Some(val) = candidate.remove(&prev) {
                     if (val - 1) > 0 {
-                        candidate.insert(prev, val-1);
+                        candidate.insert(prev, val - 1);
                     }
                 }
             }
 
             // check
             if candidate == p_map {
-                let start_idx = end_idx-(p_size-1);
+                let start_idx = end_idx - (p_size - 1);
                 result.push(start_idx as i32);
             }
         }
@@ -54,7 +55,7 @@ impl Solution {
         let p_set: HashSet<u8> = HashSet::from_iter(p.bytes());
         let mut p_arr = p.into_bytes();
         p_arr.sort();
-        let mut s_arr=  s.into_bytes();
+        let mut s_arr = s.into_bytes();
 
         let mut result = vec![];
 
@@ -69,7 +70,7 @@ impl Solution {
             end_idx += 1;
 
             if counter == p_size {
-                let start_idx = end_idx -p_size;
+                let start_idx = end_idx - p_size;
                 let mut candidate = (&s_arr[start_idx..end_idx]).to_vec();
                 candidate.sort();
                 // println!("{:?}", candidate.len());
@@ -81,18 +82,16 @@ impl Solution {
         }
 
         result
-
     }
 }
 
 fn compare_sorted(arr1: &[u8], arr2: &[u8]) -> bool {
     for idx in 0..arr1.len() {
-        if arr1[idx] != arr2[idx] { return false }
+        if arr1[idx] != arr2[idx] {
+            return false;
+        }
     }
     true
 }
 
-
-
 struct Solution;
-

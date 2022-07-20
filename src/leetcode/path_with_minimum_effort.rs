@@ -15,25 +15,25 @@ impl Solution {
             let cur_eff = efforts[r][c];
 
             // check right
-            if c < colls-1 {
-                Self::process(r, c, r, c+1, &heights, &mut efforts, &mut stack);
+            if c < colls - 1 {
+                Self::process(r, c, r, c + 1, &heights, &mut efforts, &mut stack);
             }
             // check left
             if c > 0 {
-                Self::process(r, c, r, c-1, &heights, &mut efforts, &mut stack);
+                Self::process(r, c, r, c - 1, &heights, &mut efforts, &mut stack);
             }
             // check top
             if r > 0 {
-                Self::process(r, c, r-1, c, &heights, &mut efforts, &mut stack);
+                Self::process(r, c, r - 1, c, &heights, &mut efforts, &mut stack);
             }
             // check down
-            if r < rows-1 {
-                Self::process(r, c, r+1, c, &heights, &mut efforts, &mut stack);
+            if r < rows - 1 {
+                Self::process(r, c, r + 1, c, &heights, &mut efforts, &mut stack);
             }
         }
 
         // println!("{:?}", efforts);
-        efforts[rows-1][colls-1]
+        efforts[rows - 1][colls - 1]
     }
 
     fn process(
@@ -43,11 +43,11 @@ impl Solution {
         c: usize,
         heights: &Vec<Vec<i32>>,
         efforts: &mut Vec<Vec<i32>>,
-        stack: &mut Vec<(usize, usize)>
+        stack: &mut Vec<(usize, usize)>,
     ) {
         let cur = heights[cur_r][cur_c];
         let next = heights[r][c];
-        let next_eff = (next-cur).abs();
+        let next_eff = (next - cur).abs();
 
         let cur_eff = efforts[cur_r][cur_c];
         let old_next_eff = efforts[r][c];

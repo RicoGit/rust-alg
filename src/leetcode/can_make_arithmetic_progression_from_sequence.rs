@@ -5,7 +5,9 @@ impl Solution {
         arr.sort_unstable();
         let diff = arr[1] - arr[0];
         for idx in 2..arr.len() {
-            if arr[idx] - arr[idx-1] != diff { return false}
+            if arr[idx] - arr[idx - 1] != diff {
+                return false;
+            }
         }
         true
     }

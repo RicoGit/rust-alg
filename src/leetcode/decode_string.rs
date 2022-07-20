@@ -7,11 +7,8 @@ impl Solution {
         let mut repeat = 0;
 
         for c in s.chars() {
-
             match c {
-                '0'..='9' => {
-                    repeat = repeat * 10 + (c as u8 - b'0' ) as usize
-                }
+                '0'..='9' => repeat = repeat * 10 + (c as u8 - b'0') as usize,
                 '[' => {
                     stack.push((repeat, result.clone()));
                     repeat = 0;
@@ -22,13 +19,12 @@ impl Solution {
                         result = s + result.repeat(n).as_str()
                     }
                 }
-                c => result.push(c)
+                c => result.push(c),
             }
         }
 
         result
     }
 }
-
 
 struct Solution;

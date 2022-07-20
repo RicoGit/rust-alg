@@ -12,7 +12,15 @@ impl Solution {
             graph[j as usize].push(i as usize);
         }
         let mut result = vec![];
-        Self::dfs(0, 0, 0, &mut graph, &mut vec![-1; n], &mut vec![-1; n], &mut result);
+        Self::dfs(
+            0,
+            0,
+            0,
+            &mut graph,
+            &mut vec![-1; n],
+            &mut vec![-1; n],
+            &mut result,
+        );
         result
     }
 
@@ -43,4 +51,4 @@ impl Solution {
     }
 }
 
- struct Solution;
+struct Solution;
