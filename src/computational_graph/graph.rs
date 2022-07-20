@@ -11,114 +11,151 @@
 //!
 
 
-use std::borrow::Borrow;
 use std::cell::RefCell;
+use std::fmt::{Debug, Formatter};
 use std::rc::Rc;
 
+type Node = Rc<RefCell<GraphNode>>;
 
+#[derive(Debug)]
 enum NodeType {
-    Sum(f32, f32), Mul(f32), Pow(f32),
-    Sin, Cos,
-    Variable
+    Constant,
+    Sum(Node, Node),
+    Mul(Node, Node),
+    // Pow(f32, f32),
+    // Sin(f32),
+    // Cos(f32),
+    /// Input variable, can be changed
+    Input
+}
+
+impl NodeType {
+
+    /// Checks whether a Node has at least one back reference
+    fn has_back_ref(&self) -> bool {
+
+        fn has_ref(node: &Node) -> bool {
+            node.as_ref().borrow().back_ref.is_empty()
+        }
+
+        match self {
+            NodeType::Sum(op1, op2) => { has_ref(op1) || has_ref(op2) }
+            _ => { false }
+        }
+    }
 }
 
 /// Computational node
-struct GraphNode {
-    /// Computed cached value
-    val: Option<f32>,
+pub struct GraphNode {
+    /// Cached value (computed in a first pass)
+    cache: Option<f32>,
     /// Performed operation
-    kind: NodeType,
-    /// Dependent children nodes
-    next_nodes: Vec<Rc<RefCell<GraphNode>>>,
+    operation: NodeType,
+    /// Dependent nodes (back reference for recalculating when variable changed)
+    back_ref: Vec<Node>,
 }
 
 impl GraphNode {
 
-    fn input<I: Into<f32>>(val: I) -> GraphNode {
+
+    pub fn constant<I: Into<f32>>(val: I) -> Node {
         GraphNode {
-            val,
-            kind: NodeType::Variable,
-            next_nodes
-        }
+            cache: Some(val.into()),
+            operation: NodeType::Constant,
+            back_ref: vec![]
+        }.wrap()
     }
 
-    fn sum(op1: GraphNode, op2: GraphNode) -> GraphNode {
+    pub fn input<I: Into<f32>>(val: I) -> Node {
         GraphNode {
-            val: None,
-            kind: NodeType::Sum(op2),
-            // todo!
-        }
+            cache: Some(val.into()),
+            operation: NodeType::Input,
+            back_ref: vec![]
+        }.wrap()
     }
 
+    pub fn sum(op1: Node, op2: Node) -> Node {
 
-    fn add(&mut self, node: GraphNode) {
-        self.next_nodes.push(Rc::new(RefCell::new(node)))
+        let node = GraphNode {
+            cache: None,
+            operation: NodeType::Sum(op1.clone(), op2.clone()),
+            back_ref: vec![]
+        }.wrap();
+
+        Self::add_back_refs_to_operand(&node, op1);
+        Self::add_back_refs_to_operand(&node, op2);
+
+        node
     }
 
+    pub fn mul(op1: Node, op2: Node) -> Node {
 
-}
+        let node = GraphNode {
+            cache: None,
+            operation: NodeType::Mul(op1.clone(), op2.clone()),
+            back_ref: vec![]
+        }.wrap();
 
-struct Graph {
-    /// Graph inputs
-    input: Vec<GraphNode>,
-}
+        Self::add_back_refs_to_operand(&node, op1);
+        Self::add_back_refs_to_operand(&node, op2);
 
-impl Graph {
+        node
+    }
 
-    // fn builder<I: Into<f32>>(input: Vec<I>) -> Graph {
-    //     todo!()
-    // }
-
-
-
-
-    fn compute(&self) -> f32 {
+    /// Calculates result and fills cache.
+    /// If input didn't get changed returns old value.
+    /// If input was changed recalculates only affected nodes
+    pub fn compute(&self) -> f32 {
         0.0
     }
 
+    fn add_back_refs_to_operand(current: &Node, op: Node) {
+        let mut op= op.borrow_mut();
+        if let NodeType::Input = op.operation {
+            op.back_ref.push(current.clone())
+        }
+        if op.operation.has_back_ref() {
+            op.back_ref.push(current.clone())
+        }
+    }
+
+    fn wrap(self) -> Node {
+        Rc::new(RefCell::new(self))
+    }
 
 }
 
-struct GraphBuilder {
-    /// ($x1 + $x2) * $x3
+impl Debug for GraphNode {
+    fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
+        match &self.operation {
+            NodeType::Constant => {  write!(f, "{:?}", self.cache.unwrap()) }
+            NodeType::Sum(op1, op2) => { write!(f, "({:?}+{:?})", op1.borrow(), op2.borrow()) }
+            NodeType::Mul(op1, op2) => { write!(f, "({:?}*{:?})", op1.borrow(), op2.borrow()) }
+            NodeType::Input => { write!(f, "[{:?}]", self.cache.unwrap()) }
+        }
+    }
 }
 
 #[cfg(test)]
 mod tests {
+    use std::fmt::{Debug, Formatter};
+
+    use crate::computational_graph::graph::GraphNode;
 
     #[test]
-    fn test() {
-        // x1, x2, x3 are input nodes of the computational graph:
-        let x1 = create_input("x1");
-        let x2 = create_input("x2");
-        let x3 = create_input("x3");
-        // graph variable is the output node of the graph:
-        let graph = add(
-            x1.clone(),
-            mul(
-                x2.clone(),
-                sin(
-                    add(
-                        x2.clone(),
-                        pow_f32(x3.clone(), 3f32)
-                    )
-                )
-            )
-        );
-        x1.set(1f32);
-        x2.set(2f32);
-        x3.set(3f32);
-        let mut result = graph.compute();
-        result = round(result, 5);
-        println!("Graph output = {}", result);
-        assert_eq!(round(result, 5), -0.32727);
-        x1.set(2f32);
-        x2.set(3f32);
-        x3.set(4f32);
-        result = graph.compute();
-        result = round(result, 5);
-        println!("Graph output = {}", result);
-        assert_eq!(round(result, 5), -0.56656);
+    fn build_graph_test() {
 
+        let x1 = GraphNode::input(1.0);
+        let x2 = GraphNode::input(2.0);
+        let x3 = GraphNode::input(3.0);
+
+        let mul1 = GraphNode::sum(x1.clone(), GraphNode::constant(0.5));
+        let sum1 = GraphNode::sum(x3.clone(), GraphNode::constant(-3.0));
+        let sum2 = GraphNode::sum(x2.clone(), sum1);
+        let sum3 = GraphNode::sum(x1.clone(), sum2);
+        let root = GraphNode::mul(mul1, sum3);
+
+        let expression = format!("{:?}", root.borrow());
+        assert_eq!(expression, "(([1.0]+0.5)*([1.0]+([2.0]+([3.0]+-3.0))))")
     }
 }
