@@ -43,6 +43,19 @@ impl Dag {
         node
     }
 
+    pub fn pow(base: Dag, exponent: Dag) -> Dag {
+        let node = GraphNode::new(None, NodeType::Pow(base.clone(), exponent.clone())).wrap();
+        Self::add_back_refs_to_operand(&node, base);
+        Self::add_back_refs_to_operand(&node, exponent);
+        node
+    }
+
+    pub fn sin(op: Dag) -> Dag {
+        let node = GraphNode::new(None, NodeType::Sin(op.clone())).wrap();
+        Self::add_back_refs_to_operand(&node, op);
+        node
+    }
+
     /// Calculates result and fills cache.
     /// Returns from cache if it's present.
     pub fn compute(&self) -> f32 {
@@ -61,6 +74,16 @@ impl Dag {
                 }
                 NodeType::Mul(op1, op2) => {
                     let res = dfs(op1) * dfs(op2);
+                    node.cache.replace(res);
+                    res
+                }
+                NodeType::Pow(base, exp) => {
+                    let res = dfs(base).powf(dfs(exp));
+                    node.cache.replace(res);
+                    res
+                }
+                NodeType::Sin(op) => {
+                    let res = dfs(op).sin();
                     node.cache.replace(res);
                     res
                 }
@@ -116,14 +139,13 @@ impl Dag {
 
 #[derive(Debug)]
 enum NodeType {
+    /// Input variable, can be changed
+    Input,
     Constant,
     Sum(Dag, Dag),
     Mul(Dag, Dag),
-    // Pow(f32, f32),
-    // Sin(f32),
-    // Cos(f32),
-    /// Input variable, can be changed
-    Input,
+    Pow(Dag, Dag),
+    Sin(Dag),
 }
 
 /// Computational node
@@ -171,6 +193,12 @@ impl Debug for GraphNode {
             NodeType::Mul(op1, op2) => {
                 write!(f, "({:?}*{:?})", op1.node(), op2.node())
             }
+            NodeType::Pow(op1, op2) => {
+                write!(f, "({:?}^{:?})", op1.node(), op2.node())
+            }
+            NodeType::Sin(op) => {
+                write!(f, "sin({:?})", op.node())
+            }
             NodeType::Input => {
                 write!(f, "[{:?}]", self.cache.unwrap())
             }
@@ -195,6 +223,12 @@ mod tests {
         }
         traverse(input, &mut caches);
         caches
+    }
+
+    /// Round to decimal digits
+    fn round(x: f32, precision: u32) -> f32 {
+        let m = 10i32.pow(precision) as f32;
+        (x * m).round() / m
     }
 
     #[test]
@@ -358,6 +392,46 @@ mod tests {
                 Some(47.0004),
                 Some(23.5002)
             ]
+        );
+    }
+
+    #[test]
+    fn pow_test() {
+        let x1 = Dag::input(1.1);
+        let x2 = Dag::input(2.2);
+        let x3 = Dag::input(3.3);
+        let x4 = Dag::input(4.4);
+
+        let root = Dag::pow(
+            Dag::pow(Dag::pow(x1.clone(), x2.clone()), x3.clone()),
+            x4.clone(),
+        );
+        assert_eq!(
+            format!("{:?}", root.node()),
+            "((([1.1]^[2.2])^[3.3])^[4.4])"
+        );
+
+        assert_eq!(
+            round(Dag::compute(&root), 5),
+            round(f32::powf(f32::powf(f32::powf(1.1, 2.2), 3.3), 4.4), 5)
+        );
+        assert_eq!(
+            computational_path(&x1),
+            vec![Some(1.1), Some(1.2332864), Some(1.9976113), Some(21.001406)]
+        );
+    }
+
+    #[test]
+    fn sin_test() {
+        let x1 = Dag::input(1.1);
+
+        let root = Dag::sin(Dag::sin(x1.clone()));
+        assert_eq!(format!("{:?}", root.node()), "sin(sin([1.1]))");
+
+        assert_eq!(round(Dag::compute(&root), 5), round(1.1_f32.sin().sin(), 5));
+        assert_eq!(
+            computational_path(&x1),
+            vec![Some(1.1), Some(0.8912074), Some(0.77783114)]
         );
     }
 }
