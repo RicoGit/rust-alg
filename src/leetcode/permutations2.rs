@@ -73,6 +73,6 @@ mod test {
     #[test]
     fn test1() {
         let res = Solution::permute_unique(vec![1, 1, 2]);
-        assert_eq!(res, vec![vec![1, 2, 1], vec![1, 1, 2], vec![2, 1, 1]])
+        assert_eq!(res, vec![vec![2, 1, 1], vec![1, 2, 1], vec![1, 1, 2]])
     }
 }
