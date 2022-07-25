@@ -507,3 +507,5 @@ mod wiggle_subsequence;
 mod word_break;
 /// 79. Word Search
 mod word_search;
+/// 576. Out of Boundary Paths
+mod out_of_boundary_paths;
