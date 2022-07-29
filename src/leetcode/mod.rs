@@ -509,3 +509,7 @@ mod word_break;
 mod word_search;
 /// 576. Out of Boundary Paths
 mod out_of_boundary_paths;
+/// 86. Partition List
+mod partition_list;
+/// 890. Find and Replace Pattern
+mod find_and_replace_pattern;
