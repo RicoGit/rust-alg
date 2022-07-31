@@ -513,3 +513,7 @@ mod out_of_boundary_paths;
 mod partition_list;
 /// 890. Find and Replace Pattern
 mod find_and_replace_pattern;
+/// 916. Word Subsets
+mod word_subset;
+/// 307. Range Sum Query - Mutable
+mod range_sum_query_mutable;
