@@ -517,3 +517,5 @@ mod find_and_replace_pattern;
 mod word_subset;
 /// 307. Range Sum Query - Mutable
 mod range_sum_query_mutable;
+/// 378. Kth Smallest Element in a Sorted Matrix
+mod kth_smallest_element_in_a_sorted_matrix;
