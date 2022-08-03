@@ -519,3 +519,5 @@ mod word_subset;
 mod range_sum_query_mutable;
 /// 378. Kth Smallest Element in a Sorted Matrix
 mod kth_smallest_element_in_a_sorted_matrix;
+/// 729. My Calendar I
+mod my_calendar_1;
