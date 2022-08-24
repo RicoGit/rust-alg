@@ -521,3 +521,7 @@ mod range_sum_query_mutable;
 mod kth_smallest_element_in_a_sorted_matrix;
 /// 729. My Calendar I
 mod my_calendar_1;
+/// 234. Palindrome Linked List
+mod palindrome_linked_list;
+/// 326. Power of Three
+mod power_of_three;
