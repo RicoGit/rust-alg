@@ -525,3 +525,5 @@ mod my_calendar_1;
 mod palindrome_linked_list;
 /// 326. Power of Three
 mod power_of_three;
+/// 48. Rotate Image
+mod rotate_image;
