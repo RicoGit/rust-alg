@@ -527,3 +527,5 @@ mod palindrome_linked_list;
 mod power_of_three;
 /// 48. Rotate Image
 mod rotate_image;
+/// 1328. Break a Palindrome
+mod break_a_palindrome;
