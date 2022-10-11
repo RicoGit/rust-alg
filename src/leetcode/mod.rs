@@ -529,3 +529,5 @@ mod power_of_three;
 mod rotate_image;
 /// 1328. Break a Palindrome
 mod break_a_palindrome;
+/// 658. Find K Closest Elements
+mod find_k_closest_elements;
