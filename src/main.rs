@@ -5,6 +5,7 @@ pub mod gale_shapley;
 pub mod leetcode;
 pub mod sock_merchant;
 pub mod utils;
+mod hlist;
 
 fn main() {
     println!("Sock merchant!");
